@@ -1,0 +1,25 @@
+# Jason Stys: lexical encoded-argument candidate, not a complete PowerShell parser or maliciousness verdict.
+title: PowerShell Encoded Argument Candidate
+id: 50000000-0000-4000-8000-000000000002
+status: experimental
+description: Match bounded process image suffix and two explicit spaced encoded-command switches.
+author: Jason Stys
+date: '2026-10-13'
+license: MIT
+logsource:
+    product: windows
+    service: process_creation
+detection:
+    selection:
+        Image|endswith:
+            - '\powershell.exe'
+            - '\pwsh.exe'
+        CommandLine|contains:
+            - ' -enc '
+            - ' -encodedcommand '
+    condition: selection
+falsepositives:
+    - Legitimate encoded administration scripts
+level: medium
+tags:
+    - attack.t1059.001

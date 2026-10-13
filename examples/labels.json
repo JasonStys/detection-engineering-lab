@@ -1,0 +1,91 @@
+{
+  "background-00": [],
+  "background-01": [],
+  "background-02": [],
+  "background-03": [],
+  "background-04": [],
+  "background-05": [],
+  "background-06": [],
+  "background-07": [],
+  "background-08": [],
+  "background-09": [],
+  "background-10": [],
+  "background-11": [],
+  "background-12": [],
+  "background-13": [],
+  "background-14": [],
+  "background-15": [],
+  "background-16": [],
+  "background-17": [],
+  "background-18": [],
+  "background-19": [],
+  "background-20": [],
+  "background-21": [],
+  "background-22": [],
+  "background-23": [],
+  "background-24": [],
+  "background-25": [],
+  "background-26": [],
+  "background-27": [],
+  "background-28": [],
+  "background-29": [],
+  "background-30": [],
+  "background-31": [],
+  "background-32": [],
+  "background-33": [],
+  "background-34": [],
+  "background-35": [],
+  "background-36": [],
+  "background-37": [],
+  "background-38": [],
+  "background-39": [],
+  "burst-0": [],
+  "burst-1": [],
+  "burst-2": [],
+  "burst-3": [
+    "auth-burst"
+  ],
+  "clear-maintenance": [],
+  "clear-suspicious": [
+    "50000000-0000-4000-8000-000000000001"
+  ],
+  "cloud-delete": [
+    "50000000-0000-4000-8000-000000000003"
+  ],
+  "cloud-denied": [],
+  "cloud-query": [],
+  "cloud-stop": [
+    "50000000-0000-4000-8000-000000000003"
+  ],
+  "cron-package": [],
+  "cron-read": [],
+  "cron-suspicious": [
+    "50000000-0000-4000-8000-000000000004"
+  ],
+  "cron-user-blindspot": [
+    "50000000-0000-4000-8000-000000000004"
+  ],
+  "injection-string": [],
+  "missing-group": [],
+  "ps-admin": [],
+  "ps-benign": [],
+  "ps-mixed-case": [
+    "50000000-0000-4000-8000-000000000002"
+  ],
+  "ps-suspicious": [
+    "50000000-0000-4000-8000-000000000002"
+  ],
+  "ps-tab-blindspot": [
+    "50000000-0000-4000-8000-000000000002"
+  ],
+  "slow-0": [],
+  "slow-1": [],
+  "slow-2": [],
+  "slow-3": [],
+  "typo-0": [],
+  "typo-1": [],
+  "typo-2": [],
+  "typo-3": [],
+  "typo-4": [],
+  "wrong-source": []
+}

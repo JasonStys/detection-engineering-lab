@@ -1,0 +1,20 @@
+# Jason Stys: candidate log clearing; selection EventID at line below; no telemetry commands execute.
+title: Windows Security Audit Log Cleared
+id: 50000000-0000-4000-8000-000000000001
+status: experimental
+description: Security event 1102 warrants investigation; legitimate administrator maintenance is possible.
+author: Jason Stys
+date: '2026-10-13'
+license: MIT
+logsource:
+    product: windows
+    service: security
+detection:
+    selection:
+        EventID: 1102
+    condition: selection
+falsepositives:
+    - Approved administrator log maintenance
+level: high
+tags:
+    - attack.t1685.005

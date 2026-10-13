@@ -1,0 +1,20 @@
+# Jason Stys: correlation base only. Individual 4625 events are not emitted as alerts by this lab.
+title: Windows Failed Logon Correlation Base
+id: 50000000-0000-4000-8000-000000000005
+status: experimental
+description: Select failed logons for a distinct-user rolling-window correlation.
+author: Jason Stys
+date: '2026-10-13'
+license: MIT
+logsource:
+    product: windows
+    service: security
+detection:
+    selection:
+        EventID: 4625
+    condition: selection
+falsepositives:
+    - Password typos, shared gateways and authorized testing
+level: medium
+tags:
+    - attack.t1110

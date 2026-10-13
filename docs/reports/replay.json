@@ -1,0 +1,244 @@
+{
+  "alerts": [
+    {
+      "detector": "50000000-0000-4000-8000-000000000001",
+      "event": "clear-suspicious",
+      "evidence": [
+        "clear-suspicious"
+      ],
+      "span_seconds": 0,
+      "timestamp": "2026-01-01T00:00:01.000000Z"
+    },
+    {
+      "detector": "50000000-0000-4000-8000-000000000001",
+      "event": "clear-maintenance",
+      "evidence": [
+        "clear-maintenance"
+      ],
+      "span_seconds": 0,
+      "timestamp": "2026-01-01T00:00:02.000000Z"
+    },
+    {
+      "detector": "50000000-0000-4000-8000-000000000002",
+      "event": "ps-suspicious",
+      "evidence": [
+        "ps-suspicious"
+      ],
+      "span_seconds": 0,
+      "timestamp": "2026-01-01T00:00:03.000000Z"
+    },
+    {
+      "detector": "50000000-0000-4000-8000-000000000002",
+      "event": "ps-mixed-case",
+      "evidence": [
+        "ps-mixed-case"
+      ],
+      "span_seconds": 0,
+      "timestamp": "2026-01-01T00:00:04.000000Z"
+    },
+    {
+      "detector": "50000000-0000-4000-8000-000000000002",
+      "event": "ps-admin",
+      "evidence": [
+        "ps-admin"
+      ],
+      "span_seconds": 0,
+      "timestamp": "2026-01-01T00:00:05.000000Z"
+    },
+    {
+      "detector": "50000000-0000-4000-8000-000000000003",
+      "event": "cloud-stop",
+      "evidence": [
+        "cloud-stop"
+      ],
+      "span_seconds": 0,
+      "timestamp": "2026-01-01T00:00:08.000000Z"
+    },
+    {
+      "detector": "50000000-0000-4000-8000-000000000003",
+      "event": "cloud-delete",
+      "evidence": [
+        "cloud-delete"
+      ],
+      "span_seconds": 0,
+      "timestamp": "2026-01-01T00:00:09.000000Z"
+    },
+    {
+      "detector": "50000000-0000-4000-8000-000000000004",
+      "event": "cron-suspicious",
+      "evidence": [
+        "cron-suspicious"
+      ],
+      "span_seconds": 0,
+      "timestamp": "2026-01-01T00:00:12.000000Z"
+    },
+    {
+      "detector": "50000000-0000-4000-8000-000000000004",
+      "event": "cron-package",
+      "evidence": [
+        "cron-package"
+      ],
+      "span_seconds": 0,
+      "timestamp": "2026-01-01T00:00:13.000000Z"
+    },
+    {
+      "detector": "auth-burst",
+      "event": "burst-3",
+      "evidence": [
+        "burst-0",
+        "burst-1",
+        "burst-2",
+        "burst-3"
+      ],
+      "span_seconds": 60,
+      "timestamp": "2026-01-01T00:01:20.000000Z"
+    }
+  ],
+  "author": "Jason Stys",
+  "detectors": {
+    "50000000-0000-4000-8000-000000000001": {
+      "level": "high",
+      "techniques": [
+        "T1685.005"
+      ],
+      "title": "Windows Security Audit Log Cleared"
+    },
+    "50000000-0000-4000-8000-000000000002": {
+      "level": "medium",
+      "techniques": [
+        "T1059.001"
+      ],
+      "title": "PowerShell Encoded Argument Candidate"
+    },
+    "50000000-0000-4000-8000-000000000003": {
+      "level": "high",
+      "techniques": [
+        "T1685.002"
+      ],
+      "title": "CloudTrail Logging Removal Candidate"
+    },
+    "50000000-0000-4000-8000-000000000004": {
+      "level": "medium",
+      "techniques": [
+        "T1053.003"
+      ],
+      "title": "System Cron Configuration Write Candidate"
+    },
+    "auth-burst": {
+      "level": "medium",
+      "techniques": [
+        "T1110"
+      ],
+      "title": "Distinct-user failed logon burst"
+    }
+  },
+  "duplicates_ignored": 1,
+  "evaluation": {
+    "detectors": {
+      "50000000-0000-4000-8000-000000000001": {
+        "f1": 0.6666666666666666,
+        "false_positive_rate": 0.014285714285714285,
+        "fn": 0,
+        "fp": 1,
+        "precision": 0.5,
+        "recall": 1,
+        "tn": 69,
+        "tp": 1
+      },
+      "50000000-0000-4000-8000-000000000002": {
+        "f1": 0.6666666666666666,
+        "false_positive_rate": 0.014705882352941176,
+        "fn": 1,
+        "fp": 1,
+        "precision": 0.6666666666666666,
+        "recall": 0.6666666666666666,
+        "tn": 67,
+        "tp": 2
+      },
+      "50000000-0000-4000-8000-000000000003": {
+        "f1": 1,
+        "false_positive_rate": 0,
+        "fn": 0,
+        "fp": 0,
+        "precision": 1,
+        "recall": 1,
+        "tn": 69,
+        "tp": 2
+      },
+      "50000000-0000-4000-8000-000000000004": {
+        "f1": 0.5,
+        "false_positive_rate": 0.014492753623188406,
+        "fn": 1,
+        "fp": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "tn": 68,
+        "tp": 1
+      },
+      "auth-burst": {
+        "f1": 1,
+        "false_positive_rate": 0,
+        "fn": 0,
+        "fp": 0,
+        "precision": 1,
+        "recall": 1,
+        "tn": 70,
+        "tp": 1
+      }
+    },
+    "disagreements": [
+      {
+        "detector": "50000000-0000-4000-8000-000000000001",
+        "event": "clear-maintenance",
+        "outcome": "false_positive"
+      },
+      {
+        "detector": "50000000-0000-4000-8000-000000000002",
+        "event": "ps-admin",
+        "outcome": "false_positive"
+      },
+      {
+        "detector": "50000000-0000-4000-8000-000000000002",
+        "event": "ps-tab-blindspot",
+        "outcome": "false_negative"
+      },
+      {
+        "detector": "50000000-0000-4000-8000-000000000004",
+        "event": "cron-package",
+        "outcome": "false_positive"
+      },
+      {
+        "detector": "50000000-0000-4000-8000-000000000004",
+        "event": "cron-user-blindspot",
+        "outcome": "false_negative"
+      }
+    ],
+    "micro": {
+      "f1": 0.7368421052631579,
+      "false_positive_rate": 0.008670520231213872,
+      "fn": 2,
+      "fp": 3,
+      "precision": 0.7,
+      "recall": 0.7777777777777778,
+      "tn": 343,
+      "tp": 7
+    },
+    "pairs": 355,
+    "universe": "unique event-detector pairs; correlations scored at crossing event"
+  },
+  "events": 71,
+  "incomplete_correlation_candidates": 1,
+  "schema": 1,
+  "sha256": {
+    "compiled_rules": "55d38688a41b5001183ae527660df8691258ca3050d21daed48df20a7f238a31",
+    "correlations": "05f0fda28bbeea30da954e487c2e1c8b76e9ea3a68a6413b6b06abbf35f59958",
+    "labels": "c34ec3cbecc6bc47c57fd964fb61a2d47d3a5d032b1db16747b44868f72fc3be",
+    "normalized_events": "d31af3afeb751dbab98a5147e8de89d014e8fb7aaea014ba9485f87bccb852b5"
+  },
+  "timing": {
+    "note": "Per-event processing excludes parse/sort/export; span_seconds is proof event-time span, not SOC response latency.",
+    "per_event_detector_p50_us": 2.4,
+    "per_event_detector_p95_us": 20.3,
+    "pre_export_wall_seconds": 0.020300399977713823
+  }
+}

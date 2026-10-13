@@ -1,0 +1,12 @@
+# Jason Stys. Lab schema v1, not Sigma correlation syntax; seconds, distinct-user threshold and source/host grouping.
+version: 1
+correlations:
+    - id: auth-burst
+      title: Distinct-user failed logon burst
+      base_rule: 50000000-0000-4000-8000-000000000005
+      group_by:
+          - SourceIp
+          - Hostname
+      distinct: TargetUserName
+      threshold: 4
+      window_seconds: 60

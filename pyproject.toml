@@ -1,0 +1,33 @@
+[project]
+name = "detection-engineering-lab"
+version = "1.0.0"
+description = "Measured defensive detection replay and evidence by Jason Stys"
+requires-python = ">=3.12"
+license = "MIT"
+authors = [{name = "Jason Stys"}]
+dependencies = ["PyYAML==6.0.3"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+
+[tool.coverage.run]
+branch = true
+source = ["detection"]
+
+[tool.coverage.report]
+fail_under = 85
+show_missing = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["detection"]

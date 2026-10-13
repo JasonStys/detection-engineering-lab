@@ -1,0 +1,24 @@
+# Jason Stys: successful API candidates; AccessDenied filter suppresses only explicit denied calls.
+title: CloudTrail Logging Removal Candidate
+id: 50000000-0000-4000-8000-000000000003
+status: experimental
+description: Detect stop or delete logging calls; this lab is not a CloudTrail schema adapter.
+author: Jason Stys
+date: '2026-10-13'
+license: MIT
+logsource:
+    product: aws
+    service: cloudtrail
+detection:
+    selection:
+        EventName:
+            - StopLogging
+            - DeleteTrail
+    filter:
+        ErrorCode: AccessDenied
+    condition: selection and not filter
+falsepositives:
+    - Authorized trail replacement or maintenance
+level: high
+tags:
+    - attack.t1685.002

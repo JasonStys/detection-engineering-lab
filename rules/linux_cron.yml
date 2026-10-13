@@ -1,0 +1,21 @@
+# Jason Stys: auditd normalized write candidates; Paths and Operation are data, never shell instructions.
+title: System Cron Configuration Write Candidate
+id: 50000000-0000-4000-8000-000000000004
+status: experimental
+description: Writes to system cron paths may establish persistence; package updates can match too.
+author: Jason Stys
+date: '2026-10-13'
+license: MIT
+logsource:
+    product: linux
+    service: auditd
+detection:
+    selection:
+        Operation: write
+        Path|startswith: /etc/cron.
+    condition: selection
+falsepositives:
+    - Authorized package or configuration management writes
+level: medium
+tags:
+    - attack.t1053.003
