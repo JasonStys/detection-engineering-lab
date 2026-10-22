@@ -87,6 +87,7 @@ Read [architecture](docs/architecture.md), [input/configuration contracts](docs/
 | [docs/architecture.md](docs/architecture.md) | Architecture and decision record. |
 | [docs/contracts.md](docs/contracts.md) | Input and output contracts. |
 | [docs/reports/demo.html](docs/reports/demo.html) | Offline synthetic demonstration report with escaped data and hash-authorized CSS. |
+| [docs/reports/portfolio-sync-2026-10-22.md](docs/reports/portfolio-sync-2026-10-22.md) | <!-- File: docs/reports/portfolio-sync-2026-10-22.md; Purpose: certificate-bundle security repair and evidence by Jason Stys. -->. |
 | [docs/reports/replay.json](docs/reports/replay.json) | Measured synthetic replay counts, disagreements, timings and snapshot hashes. |
 | [docs/reports/validation.md](docs/reports/validation.md) | Validation evidence — 2026-10-13. |
 | [docs/research.md](docs/research.md) | Primary-source research and provenance. |
