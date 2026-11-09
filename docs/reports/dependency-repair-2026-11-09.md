@@ -1,0 +1,7 @@
+# CI-discovered dependency repair — 2026-11-09
+
+Created by Jason Stys. Hosted dependency auditing found **17 published vulnerabilities in filelock 4.1.1**, a transitive development dependency through CacheControl. Local reproduction with the unchanged security gate confirmed those findings. No ignore rules were added.
+
+The narrowly scoped repair pins **filelock 4.2.1** with its official wheel and source SHA-256 hashes. The [maintainer's advisory](https://github.com/tox-dev/filelock/security/advisories/GHSA-2g95-wg33-c5x2) and [related protocol-directory advisory](https://github.com/tox-dev/filelock/security/advisories/GHSA-9c4x-gm8v-wgc4) identify 4.2.1 as patched; [official PyPI metadata](https://pypi.org/pypi/filelock/4.2.1/json) supplies the hashes, Python >=3.11 requirement and no additional dependencies. The project already requires Python >=3.12. No runtime source, other resolved packages or security gate changed.
+
+Validation after hash-checked installation: pip check passed; the complete locked development graph passed the same pip-audit gate with **no known vulnerabilities**; the full existing and new test suite passed again with the previously documented Windows symlink-privilege skips and unchanged coverage. Exact source-map/file-guide checks, Ruff and strict mypy remained passing. Hosted OS/security checks must run again on the repaired commit; a local clean audit is not a claim of completed hosted CI.

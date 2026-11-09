@@ -34,6 +34,7 @@ Open `out/demo/report.html` locally. JSON results and `evidence.sqlite3` sit bes
 
 ## Major features
 
+- **Operational review:** compare candidate rule output against the exact same event/label snapshots; record reasoned analyst dispositions bound to one report hash, with explicit unreviewed alerts. Originals and accuracy remain immutable. [Workflow guide](docs/workflows.md).
 - **Normalize:** strict JSONL envelope, explicit timezone to UTC, immutable scalar fields, 16MiB/50,000-record cap; identical IDs deduplicate and conflicting IDs fail.
 - **Detect:** five authored experimental Sigma rules, official-schema validation, case-insensitive literal comparisons and explicit source boundaries. Unsupported regex, wildcard or condition syntax fails closed.
 - **Correlate:** four distinct failed-logon users from one source IP on one host within an inclusive 60-second window. Emit only on threshold crossings, with bounded supporting event identities.
@@ -81,20 +82,24 @@ Read [architecture](docs/architecture.md), [input/configuration contracts](docs/
 | [detection/evaluate.py](detection/evaluate.py) | Independent labeled replay evaluation with explicit event-detector denominators. Jason Stys. |
 | [detection/events.py](detection/events.py) | Normalize bounded JSONL telemetry and deduplicate stable identities. Jason Stys. |
 | [detection/io.py](detection/io.py) | Bounded regular-file, strict JSON and safe YAML readers. Created by Jason Stys. |
+| [detection/review.py](detection/review.py) | Snapshot-bound offline alert triage and rule-change review without changing detection evidence. Jason Stys. |
 | [detection/rules.py](detection/rules.py) | Constrained Sigma rule compiler without eval, regex or silent unsupported syntax. Jason Stys. |
 | [detection/schema.sql](detection/schema.sql) | STRICT indexed evidence tables and foreign-key constraints. |
 | [detection/store.py](detection/store.py) | New-directory-only evidence export, bound SQL inserts and inert escaped HTML. Jason Stys. |
 | [docs/architecture.md](docs/architecture.md) | Architecture and decision record. |
 | [docs/contracts.md](docs/contracts.md) | Input and output contracts. |
 | [docs/reports/demo.html](docs/reports/demo.html) | Offline synthetic demonstration report with escaped data and hash-authorized CSS. |
+| [docs/reports/dependency-repair-2026-11-09.md](docs/reports/dependency-repair-2026-11-09.md) | CI-discovered dependency repair — 2026-11-09. |
 | [docs/reports/portfolio-sync-2026-10-22.md](docs/reports/portfolio-sync-2026-10-22.md) | <!-- File: docs/reports/portfolio-sync-2026-10-22.md; Purpose: certificate-bundle security repair and evidence by Jason Stys. -->. |
 | [docs/reports/replay.json](docs/reports/replay.json) | Measured synthetic replay counts, disagreements, timings and snapshot hashes. |
 | [docs/reports/validation.md](docs/reports/validation.md) | Validation evidence — 2026-10-13. |
+| [docs/reports/workflows-2026-11-09.md](docs/reports/workflows-2026-11-09.md) | Offline review workflow validation — 2026-11-09. |
 | [docs/research.md](docs/research.md) | Primary-source research and provenance. |
 | [docs/rules.md](docs/rules.md) | Rules, scenarios and triage. |
 | [docs/runbook.md](docs/runbook.md) | Operator and contributor runbook. |
 | [docs/testing.md](docs/testing.md) | Test strategy and validation gates. |
 | [docs/threat-model.md](docs/threat-model.md) | Threat model and security review. |
+| [docs/workflows.md](docs/workflows.md) | Rule comparison and analyst review. |
 | [examples/events.jsonl](examples/events.jsonl) | Fictional mixed-source input with disorder and one exact duplicate; no labels. |
 | [examples/labels.json](examples/labels.json) | Independently authored benign/positive truth, separate from features. |
 | [pyproject.toml](pyproject.toml) | Runtime metadata and strict lint/type/test/coverage gates. |
@@ -118,6 +123,7 @@ Read [architecture](docs/architecture.md), [input/configuration contracts](docs/
 | [tests/test_detection.py](tests/test_detection.py) | Independent semantic oracle, Sigma matching and labeled replay regressions. Jason Stys. |
 | [tests/test_export.py](tests/test_export.py) | End-to-end CLI, inert HTML, SQL binding and non-overwrite output tests. Jason Stys. |
 | [tests/test_inputs.py](tests/test_inputs.py) | Schema, resource, ambiguity and untrusted-input safety regressions. Jason Stys. |
+| [tests/test_review.py](tests/test_review.py) | Independent comparison/triage workflow boundaries and actual CLI acceptance. Jason Stys. |
 | [tests/test_tools.py](tests/test_tools.py) | Development-gate drift, schema verification and code-map idempotence. Jason Stys. |
 | [tools.lock.json](tools.lock.json) | Official scanner versions, URLs and verified archive digests. |
 
