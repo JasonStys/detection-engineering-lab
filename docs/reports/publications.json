@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "project": "detection-engineering-lab",
+  "author": "Jason Stys",
+  "editionDate": "2026-11-09",
+  "sourceBaseline": "7629605841823ebc7a56317ec2addac6d5ab3e38",
+  "sourceUrl": "https://github.com/JasonStys/detection-engineering-lab/tree/7629605841823ebc7a56317ec2addac6d5ab3e38",
+  "functionalEvidenceBaseline": "7629605841823ebc7a56317ec2addac6d5ab3e38",
+  "evidenceObservedAt": "2026-11-10T05:25:40.628667+00:00",
+  "workflowEvidence": [
+    {
+      "conclusion": "success",
+      "databaseId": 42697020979,
+      "event": "push",
+      "headSha": "7629605841823ebc7a56317ec2addac6d5ab3e38",
+      "name": "CodeQL",
+      "status": "completed",
+      "url": "https://github.com/JasonStys/detection-engineering-lab/actions/runs/42697020979"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 42697020943,
+      "event": "push",
+      "headSha": "7629605841823ebc7a56317ec2addac6d5ab3e38",
+      "name": "Validate",
+      "status": "completed",
+      "url": "https://github.com/JasonStys/detection-engineering-lab/actions/runs/42697020943"
+    }
+  ],
+  "summary": "Add hash-bound analyst dispositions and same-event rule/label comparisons with immutable alert evidence and inert HTML review.",
+  "rationale": "Connects rule changes to reviewable outcomes without rewriting original detections or hiding uncertainty.",
+  "limitations": [
+    "Analyst names and dispositions are local assertions, not authenticated reviewers or incident verdicts.",
+    "Supplied local event/rule/label snapshots are not authenticated acquisition or publisher attestation.",
+    "Comparisons preserve original detections; they do not prove that an undetected event is benign."
+  ],
+  "documents": [
+    {
+      "filename": "project-guide.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 44363,
+      "sha256": "1760967b99174030f528021f72db7c8b60952096ec96e6d5a9d70755fecce112",
+      "sourceBaseline": "7629605841823ebc7a56317ec2addac6d5ab3e38",
+      "visualReview": {
+        "approved": true,
+        "method": "Every rendered page individually viewed at readable original resolution",
+        "pageCount": 5,
+        "renderedPageSha256": {
+          "page-1.png": "d9d2293211d045479a8fa3e8fd4da50fb25d83b3726d643ed9d6e13687c66cca",
+          "page-2.png": "250ff2b33b4d2a02a85ae58c4e8a1d50b36e9246db8dd53e52c9bfb26c434f0f",
+          "page-3.png": "b1cbabcefb918d64522e36620e20f9eed1aa00f5a15a8f93ed8038f3b668902d",
+          "page-4.png": "8557675f699abe4371d5c1b06c8342e632a99c5be4125ff4f0f702386fff83ff",
+          "page-5.png": "84d12a5bd307a1431bf9e3153279542bee38c6fc201f7b9d3e58342ebe7522b9"
+        }
+      }
+    }
+  ],
+  "scope": "Reviewed documentation editions of the cited source. Checksums identify bytes, not authorship. Historical measurements retain their own dates; integration CI must be checked separately."
+}
