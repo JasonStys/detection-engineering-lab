@@ -88,9 +88,13 @@ Read [architecture](docs/architecture.md), [input/configuration contracts](docs/
 | [detection/store.py](detection/store.py) | New-directory-only evidence export, bound SQL inserts and inert escaped HTML. Jason Stys. |
 | [docs/architecture.md](docs/architecture.md) | Architecture and decision record. |
 | [docs/contracts.md](docs/contracts.md) | Input and output contracts. |
+| [docs/handbook.md](docs/handbook.md) | Detection Engineering Lab handbook. |
 | [docs/reports/demo.html](docs/reports/demo.html) | Offline synthetic demonstration report with escaped data and hash-authorized CSS. |
 | [docs/reports/dependency-repair-2026-11-09.md](docs/reports/dependency-repair-2026-11-09.md) | CI-discovered dependency repair — 2026-11-09. |
+| [docs/reports/documentation-refresh-2026-11-09.md](docs/reports/documentation-refresh-2026-11-09.md) | Documentation refresh — 2026-11-09. |
 | [docs/reports/portfolio-sync-2026-10-22.md](docs/reports/portfolio-sync-2026-10-22.md) | <!-- File: docs/reports/portfolio-sync-2026-10-22.md; Purpose: certificate-bundle security repair and evidence by Jason Stys. -->. |
+| [docs/reports/project-guide.docx](docs/reports/project-guide.docx) | Reviewed Word project guide bound to the documented source revision. |
+| [docs/reports/publications.json](docs/reports/publications.json) | Exact Office digests, visual review scopes and immutable source baselines. |
 | [docs/reports/replay.json](docs/reports/replay.json) | Measured synthetic replay counts, disagreements, timings and snapshot hashes. |
 | [docs/reports/validation.md](docs/reports/validation.md) | Validation evidence — 2026-10-13. |
 | [docs/reports/workflows-2026-11-09.md](docs/reports/workflows-2026-11-09.md) | Offline review workflow validation — 2026-11-09. |
@@ -132,3 +136,9 @@ Read [architecture](docs/architecture.md), [input/configuration contracts](docs/
 ## Author and contact
 
 Created by [Jason Stys](https://github.com/JasonStys). Contact through [LinkedIn](https://www.linkedin.com/in/jason-stys-31b30b351/). MIT license covers authored code and rules; the vendored Sigma schema is public domain with [provenance](docs/research.md). No employer endorsement or operational certification is implied.
+
+## Documentation editions
+
+Start with the [organized handbook](docs/handbook.md) for current usage, design, security and test guidance. Reviewed downloadable editions: [project-guide.docx](docs/reports/project-guide.docx).
+
+[Publication identities and source scope](docs/reports/publications.json) · [Documentation validation record](docs/reports/documentation-refresh-2026-11-09.md). Historical results retain their own tested revision and date.
