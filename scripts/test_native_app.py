@@ -1,42 +1,43 @@
 """Run the real frozen workbench twice with an owned synthetic profile and exact bundle persistence. Jason Stys."""
 # BEGIN CODE MAP (generated; python scripts/code_map.py)
-# variable: ROOT — line 55
-# variable: PRODUCT — line 56
-# variable: EXECUTABLE — line 57
-# variable: VERSION — line 58
-# definition: gone — line 61
-# parameter: pid — line 61
-# variable: kernel — line 65
-# variable: handle — line 71
-# definition: launch — line 82
-# parameter: executable — line 83
-# parameter: metadata — line 83
-# parameter: output — line 83
-# parameter: profile — line 83
-# parameter: reopen — line 83
-# variable: arguments — line 86
-# variable: environment — line 89
-# variable: key — line 90
-# variable: child — line 93
-# variable: code — line 100
-# variable: path — line 101
-# variable: stream — line 102
-# variable: payload — line 103
-# variable: receipt — line 106
-# definition: main — line 121
-# variable: executable — line 125
-# variable: metadata — line 126
-# variable: source — line 127
-# variable: stream — line 136
-# variable: digest — line 137
-# variable: destination — line 142
-# variable: temporary — line 144
-# variable: scratch — line 145
-# variable: profile — line 149
-# variable: first — line 150
-# variable: second — line 151
-# variable: path — line 155
-# variable: summary — line 157
+# variable: ROOT — line 56
+# variable: PRODUCT — line 57
+# variable: EXECUTABLE — line 58
+# variable: VERSION — line 59
+# definition: gone — line 62
+# parameter: pid — line 62
+# variable: kernel — line 66
+# variable: handle — line 72
+# definition: launch — line 83
+# parameter: executable — line 84
+# parameter: metadata — line 84
+# parameter: output — line 84
+# parameter: profile — line 84
+# parameter: reopen — line 84
+# variable: arguments — line 87
+# variable: environment — line 90
+# variable: key — line 91
+# variable: child — line 94
+# variable: code — line 101
+# variable: path — line 102
+# variable: stream — line 103
+# variable: payload — line 104
+# variable: receipt — line 107
+# variable: diagnostic — line 109
+# definition: main — line 130
+# variable: executable — line 134
+# variable: metadata — line 135
+# variable: source — line 136
+# variable: stream — line 145
+# variable: digest — line 146
+# variable: destination — line 151
+# variable: temporary — line 153
+# variable: scratch — line 154
+# variable: profile — line 158
+# variable: first — line 159
+# variable: second — line 160
+# variable: path — line 164
+# variable: summary — line 166
 # END CODE MAP
 
 from __future__ import annotations
@@ -104,7 +105,15 @@ def launch(
     if len(payload) > 65536:
         raise AssertionError("native receipt exceeds byte limit")
     receipt = json.loads(payload)
-    assert code == 0 and receipt["passed"] is True and receipt["synthetic"] is True
+    if code != 0 or receipt.get("passed") is not True or receipt.get("synthetic") is not True:
+        diagnostic = ROOT / "out/native-acceptance"
+        diagnostic.mkdir(exist_ok=True)
+        (diagnostic / ("failed-reopen.json" if reopen else "failed-first.json")).write_bytes(
+            payload
+        )
+        raise AssertionError(
+            "Owned native acceptance failed at " + str(receipt.get("failure_stage", "startup"))[:60]
+        )
     assert receipt["product"] == PRODUCT and receipt["version"] == VERSION
     assert receipt["python_version"] == "3.14.10"
     assert receipt["python_dll_sha256"] == metadata["resources"]["python314.dll"]

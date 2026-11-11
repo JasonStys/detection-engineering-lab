@@ -1,67 +1,72 @@
 """Exercise the same real frozen Tk controls/core on an explicit synthetic profile; no arbitrary scripts. Jason Stys."""
 # BEGIN CODE MAP (generated; python scripts/code_map.py)
-# definition: capture — line 87
-# parameter: target — line 87
-# parameter: window — line 87
-# variable: load — line 93
-# variable: gdi — line 94
-# variable: user — line 94
-# variable: pointer — line 95
-# variable: arguments — line 96
-# variable: library — line 96
-# variable: name — line 96
-# variable: result — line 96
-# variable: function — line 114
-# variable: handle — line 117
-# variable: rectangle — line 118
-# variable: height — line 121
-# variable: width — line 121
-# variable: source — line 124
-# variable: destination — line 125
-# variable: bitmap — line 126
-# variable: previous — line 127
-# variable: pixels — line 132
-# variable: header — line 133
-# variable: raw — line 140
-# variable: scanlines — line 141
-# variable: row — line 142
-# variable: column — line 144
-# variable: offset — line 145
-# definition: chunk — line 148
-# parameter: data — line 148
-# parameter: name — line 148
-# definition: exercise — line 170
-# parameter: output — line 170
-# parameter: reopen — line 170
-# parameter: window — line 170
-# variable: deadline — line 173
-# variable: receipt — line 174
-# definition: finish — line 192
-# parameter: error — line 192
-# variable: data — line 199
-# variable: name — line 199
-# variable: row — line 201
-# definition: checked — line 208
-# parameter: callback — line 208
-# definition: wait — line 216
-# parameter: callback — line 216
-# definition: original — line 226
-# variable: files — line 228
-# variable: report — line 229
-# variable: key — line 231
-# definition: reviewed — line 255
-# variable: review — line 257
-# variable: original_report — line 259
-# variable: row — line 262
-# definition: cumulative — line 281
-# variable: review — line 283
-# variable: row — line 286
-# variable: parent — line 298
-# variable: exported — line 304
-# variable: path — line 305
-# variable: invalid — line 309
-# definition: rejected — line 317
-# definition: begin — line 324
+# definition: capture — line 92
+# parameter: target — line 92
+# parameter: window — line 92
+# variable: load — line 98
+# variable: gdi — line 99
+# variable: user — line 99
+# variable: pointer — line 100
+# variable: arguments — line 101
+# variable: library — line 101
+# variable: name — line 101
+# variable: result — line 101
+# variable: function — line 119
+# variable: handle — line 122
+# variable: rectangle — line 123
+# variable: height — line 126
+# variable: width — line 126
+# variable: source — line 129
+# variable: destination — line 130
+# variable: bitmap — line 131
+# variable: previous — line 132
+# variable: pixels — line 137
+# variable: header — line 138
+# variable: raw — line 145
+# variable: scanlines — line 146
+# variable: row — line 147
+# variable: column — line 149
+# variable: offset — line 150
+# definition: chunk — line 153
+# parameter: data — line 153
+# parameter: name — line 153
+# definition: exercise — line 175
+# parameter: output — line 175
+# parameter: reopen — line 175
+# parameter: window — line 175
+# variable: deadline — line 178
+# variable: receipt — line 179
+# definition: finish — line 197
+# parameter: error — line 197
+# variable: data — line 204
+# variable: name — line 204
+# variable: row — line 206
+# definition: checked — line 213
+# parameter: callback — line 213
+# definition: wait — line 222
+# parameter: callback — line 222
+# definition: original — line 232
+# variable: files — line 234
+# variable: report — line 235
+# variable: key — line 237
+# definition: reviewed — line 262
+# variable: review — line 264
+# variable: original_report — line 266
+# variable: row — line 269
+# definition: cumulative — line 288
+# variable: review — line 290
+# variable: row — line 293
+# variable: parent — line 305
+# variable: exported — line 311
+# variable: path — line 312
+# variable: invalid — line 316
+# definition: rejected — line 324
+# definition: layout — line 331
+# variable: original — line 333
+# variable: button — line 356
+# variable: name — line 356
+# variable: button — line 361
+# definition: begin — line 377
 # END CODE MAP
 
 from __future__ import annotations
@@ -211,6 +216,7 @@ def exercise(window: Workbench, output: Path, reopen: bool) -> None:
             callback()
         except Exception:
             receipt["failure"] = "native acceptance assertion or operation failed"
+            receipt["failure_stage"] = callback.__name__
             finish(True)
 
     def wait(callback: Any) -> None:
@@ -238,6 +244,7 @@ def exercise(window: Workbench, output: Path, reopen: bool) -> None:
         assert len(window.table.get_children()) == 1
         window.table.selection_set("0")
         window.inspect()
+        layout()
         capture(window, output / "investigation.png")
         receipt["steps"].append("real-labeled-core-timeline-filter")
         assert window.review_button is not None
@@ -320,6 +327,52 @@ def exercise(window: Workbench, output: Path, reopen: bool) -> None:
         assert "rejected" in window.status.get().lower()
         receipt["steps"].append("malformed-input-retained-prior-evidence")
         finish()
+
+    def layout() -> None:
+        """Real minimum-width layout keeps every lifecycle control fully visible even with long status text."""
+        original = window.status.get()
+        window.root.geometry("980x700")
+        window.status.set(
+            original
+            + " Synthetic long-message layout check: existing evidence remains available and Exit waits for the owned operation."
+        )
+        window.root.update()
+        receipt["layout"] = {
+            "root": [window.root.winfo_width(), window.root.winfo_height()],
+            "status": [
+                window.status_label.winfo_width(),
+                window.status_label.winfo_height(),
+                window.status_label.winfo_reqheight(),
+                int(window.status_label.cget("wraplength")),
+            ],
+            "buttons": {
+                name: [
+                    button.winfo_width(),
+                    button.winfo_reqwidth(),
+                    button.winfo_rootx() - window.root.winfo_rootx(),
+                    button.winfo_rooty() - window.root.winfo_rooty(),
+                    button.winfo_height(),
+                ]
+                for name, button in window.footer_buttons.items()
+            },
+        }
+        assert int(window.status_label.cget("wraplength")) <= window.status_label.winfo_width()
+        assert window.status_label.winfo_height() >= window.status_label.winfo_reqheight()
+        for button in window.footer_buttons.values():
+            assert button.winfo_width() >= button.winfo_reqwidth()
+            assert button.winfo_rootx() >= window.root.winfo_rootx()
+            assert (
+                button.winfo_rootx() + button.winfo_width()
+                <= window.root.winfo_rootx() + window.root.winfo_width()
+            )
+            assert (
+                button.winfo_rooty() + button.winfo_height()
+                <= window.root.winfo_rooty() + window.root.winfo_height()
+            )
+        window.status.set(original)
+        window.root.geometry("1260x860")
+        window.root.update()
+        receipt["steps"].append("real-minimum-width-long-status-all-lifecycle-controls-visible")
 
     def begin() -> None:
         """Use the actual Run button and permission guard; reopen never replays or silently reseeds a project."""

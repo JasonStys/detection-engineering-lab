@@ -105,6 +105,7 @@ Read [architecture](docs/architecture.md), [input/configuration contracts](docs/
 | [docs/reports/dependency-repair-2026-11-09.md](docs/reports/dependency-repair-2026-11-09.md) | CI-discovered dependency repair — 2026-11-09. |
 | [docs/reports/documentation-refresh-2026-11-09.md](docs/reports/documentation-refresh-2026-11-09.md) | Documentation refresh — 2026-11-09. |
 | [docs/reports/native-application-2026-11-10.md](docs/reports/native-application-2026-11-10.md) | Native workbench validation — 2026-11-10. |
+| [docs/reports/native-reader-boundary-2026-11-10.md](docs/reports/native-reader-boundary-2026-11-10.md) | Native reader and lifecycle-layout follow-up — 2026-11-10. |
 | [docs/reports/portfolio-sync-2026-10-22.md](docs/reports/portfolio-sync-2026-10-22.md) | <!-- File: docs/reports/portfolio-sync-2026-10-22.md; Purpose: certificate-bundle security repair and evidence by Jason Stys. -->. |
 | [docs/reports/project-guide.docx](docs/reports/project-guide.docx) | Reviewed Word project guide bound to the documented source revision. |
 | [docs/reports/publications.json](docs/reports/publications.json) | Exact Office digests, visual review scopes and immutable source baselines. |
@@ -148,6 +149,7 @@ Read [architecture](docs/architecture.md), [input/configuration contracts](docs/
 | [tests/test_detection.py](tests/test_detection.py) | Independent semantic oracle, Sigma matching and labeled replay regressions. Jason Stys. |
 | [tests/test_export.py](tests/test_export.py) | End-to-end CLI, inert HTML, SQL binding and non-overwrite output tests. Jason Stys. |
 | [tests/test_inputs.py](tests/test_inputs.py) | Schema, resource, ambiguity and untrusted-input safety regressions. Jason Stys. |
+| [tests/test_reader_races.py](tests/test_reader_races.py) | Actual opened-device and POSIX regular-to-FIFO replacement regressions for bounded readers. Jason Stys. |
 | [tests/test_review.py](tests/test_review.py) | Independent comparison/triage workflow boundaries and actual CLI acceptance. Jason Stys. |
 | [tests/test_tools.py](tests/test_tools.py) | Development-gate drift, schema verification and code-map idempotence. Jason Stys. |
 | [tools.lock.json](tools.lock.json) | Official scanner versions, URLs and verified archive digests. |

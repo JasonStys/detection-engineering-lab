@@ -1,148 +1,153 @@
 """Native offline workbench: real project inputs, analysis, searchable evidence, history and export. Jason Stys."""
 # BEGIN CODE MAP (generated; python scripts/code_map.py)
-# definition: Workbench — line 170
-# definition: __init__ — line 173
-# parameter: root — line 173
-# parameter: self — line 173
-# parameter: state — line 173
-# variable: _kind — line 187
-# variable: _label — line 187
-# variable: name — line 187
-# variable: style — line 202
-# variable: container — line 206
-# variable: _ — line 215
-# variable: history — line 215
-# variable: inputs — line 215
-# variable: results — line 215
-# variable: prepared — line 225
-# parameter: _event — line 238
-# variable: index — line 239
-# variable: kind — line 239
-# variable: label — line 239
-# variable: name — line 239
-# variable: label_widget — line 240
-# variable: entry — line 242
-# variable: button — line 247
-# variable: row — line 255
-# variable: filters — line 265
-# parameter: _event — line 270
-# variable: search — line 272
-# parameter: _args — line 274
-# variable: pane — line 275
-# variable: table_frame — line 277
-# variable: key — line 284
-# variable: label — line 284
-# variable: width — line 284
-# variable: scroll — line 292
-# variable: label — line 315
-# variable: name — line 315
-# variable: width — line 315
-# variable: footer — line 331
-# variable: variable — line 339
-# parameter: _args — line 340
-# parameter: _args — line 341
-# definition: load_prepared — line 346
-# parameter: self — line 346
-# variable: selected — line 350
-# variable: name — line 352
-# variable: variable — line 352
-# definition: show_fields — line 361
-# parameter: self — line 361
-# variable: active — line 363
-# variable: name — line 364
-# variable: widgets — line 364
-# variable: widget — line 365
-# definition: input_changed — line 371
-# parameter: self — line 371
-# definition: review_selected — line 376
-# parameter: self — line 376
-# variable: selected — line 378
-# definition: choose — line 398
-# parameter: kind — line 398
-# parameter: name — line 398
-# parameter: self — line 398
-# variable: value — line 403
-# variable: value — line 407
-# variable: value — line 411
-# definition: run — line 418
-# parameter: self — line 418
-# variable: name — line 425
-# variable: parameters — line 425
-# variable: variable — line 425
-# variable: selection — line 428
-# variable: control — line 435
-# definition: worker — line 445
-# parameter: parameters — line 445
-# parameter: self — line 445
-# variable: directory — line 450
-# variable: files — line 451
-# variable: kind — line 451
-# variable: summary — line 451
-# variable: identity — line 452
-# definition: poll — line 471
-# parameter: self — line 471
-# variable: identity — line 474
-# variable: summary — line 474
-# variable: control — line 478
-# definition: show — line 497
-# parameter: identity — line 497
-# parameter: self — line 497
-# variable: files — line 499
-# definition: render — line 509
-# parameter: self — line 509
-# variable: query — line 512
-# variable: matching — line 513
-# variable: row — line 515
-# variable: index — line 519
-# variable: row — line 519
-# definition: detail_text — line 525
-# parameter: self — line 525
-# parameter: value — line 525
-# definition: inspect — line 532
-# parameter: _event — line 532
-# parameter: self — line 532
-# variable: selected — line 534
-# definition: refresh_history — line 540
-# parameter: self — line 540
-# variable: row — line 543
-# definition: open_history — line 548
-# parameter: self — line 548
-# variable: selected — line 552
-# definition: export — line 560
-# parameter: self — line 560
-# variable: parent — line 565
-# definition: remove_history — line 579
-# parameter: self — line 579
-# variable: selected — line 584
-# variable: identity — line 589
-# variable: files — line 590
-# variable: expected — line 591
-# variable: data — line 592
-# variable: name — line 592
-# definition: help — line 617
-# parameter: self — line 617
-# definition: licenses — line 626
-# parameter: self — line 626
-# variable: name — line 629
-# variable: text — line 630
-# variable: dialog — line 631
-# variable: frame — line 634
-# variable: label — line 636
-# variable: area — line 642
-# variable: scroll — line 643
-# definition: exit — line 657
-# parameter: self — line 657
-# definition: main — line 665
-# parameter: argv — line 665
-# variable: parser — line 667
-# variable: args — line 671
-# variable: state — line 676
-# variable: window — line 677
-# variable: root — line 678
-# variable: identity — line 680
-# variable: state — line 689
-# variable: root — line 695
-# variable: window — line 696
+# definition: Workbench — line 175
+# definition: __init__ — line 178
+# parameter: root — line 178
+# parameter: self — line 178
+# parameter: state — line 178
+# variable: _kind — line 192
+# variable: _label — line 192
+# variable: name — line 192
+# variable: style — line 207
+# variable: container — line 211
+# variable: _ — line 220
+# variable: history — line 220
+# variable: inputs — line 220
+# variable: results — line 220
+# variable: prepared — line 230
+# parameter: _event — line 243
+# variable: index — line 244
+# variable: kind — line 244
+# variable: label — line 244
+# variable: name — line 244
+# variable: label_widget — line 245
+# variable: entry — line 247
+# variable: button — line 252
+# variable: row — line 260
+# variable: filters — line 270
+# parameter: _event — line 275
+# variable: search — line 277
+# parameter: _args — line 279
+# variable: pane — line 280
+# variable: table_frame — line 282
+# variable: key — line 289
+# variable: label — line 289
+# variable: width — line 289
+# variable: scroll — line 297
+# variable: label — line 320
+# variable: name — line 320
+# variable: width — line 320
+# variable: footer — line 336
+# parameter: event — line 342
+# variable: action — line 345
+# variable: label — line 345
+# variable: padding — line 345
+# variable: button — line 350
+# variable: variable — line 353
+# parameter: _args — line 354
+# parameter: _args — line 355
+# definition: load_prepared — line 360
+# parameter: self — line 360
+# variable: selected — line 364
+# variable: name — line 366
+# variable: variable — line 366
+# definition: show_fields — line 375
+# parameter: self — line 375
+# variable: active — line 377
+# variable: name — line 378
+# variable: widgets — line 378
+# variable: widget — line 379
+# definition: input_changed — line 385
+# parameter: self — line 385
+# definition: review_selected — line 390
+# parameter: self — line 390
+# variable: selected — line 392
+# definition: choose — line 412
+# parameter: kind — line 412
+# parameter: name — line 412
+# parameter: self — line 412
+# variable: value — line 417
+# variable: value — line 421
+# variable: value — line 425
+# definition: run — line 432
+# parameter: self — line 432
+# variable: name — line 439
+# variable: parameters — line 439
+# variable: variable — line 439
+# variable: selection — line 442
+# variable: control — line 449
+# definition: worker — line 459
+# parameter: parameters — line 459
+# parameter: self — line 459
+# variable: directory — line 464
+# variable: files — line 465
+# variable: kind — line 465
+# variable: summary — line 465
+# variable: identity — line 466
+# definition: poll — line 485
+# parameter: self — line 485
+# variable: identity — line 488
+# variable: summary — line 488
+# variable: control — line 492
+# definition: show — line 511
+# parameter: identity — line 511
+# parameter: self — line 511
+# variable: files — line 513
+# definition: render — line 523
+# parameter: self — line 523
+# variable: query — line 526
+# variable: matching — line 527
+# variable: row — line 529
+# variable: index — line 533
+# variable: row — line 533
+# definition: detail_text — line 539
+# parameter: self — line 539
+# parameter: value — line 539
+# definition: inspect — line 546
+# parameter: _event — line 546
+# parameter: self — line 546
+# variable: selected — line 548
+# definition: refresh_history — line 554
+# parameter: self — line 554
+# variable: row — line 557
+# definition: open_history — line 562
+# parameter: self — line 562
+# variable: selected — line 566
+# definition: export — line 574
+# parameter: self — line 574
+# variable: parent — line 579
+# definition: remove_history — line 593
+# parameter: self — line 593
+# variable: selected — line 598
+# variable: identity — line 603
+# variable: files — line 604
+# variable: expected — line 605
+# variable: data — line 606
+# variable: name — line 606
+# definition: help — line 631
+# parameter: self — line 631
+# definition: licenses — line 640
+# parameter: self — line 640
+# variable: name — line 643
+# variable: text — line 644
+# variable: dialog — line 645
+# variable: frame — line 648
+# variable: label — line 650
+# variable: area — line 656
+# variable: scroll — line 657
+# definition: exit — line 671
+# parameter: self — line 671
+# definition: main — line 679
+# parameter: argv — line 679
+# variable: parser — line 681
+# variable: args — line 685
+# variable: state — line 690
+# variable: window — line 691
+# variable: root — line 692
+# variable: identity — line 694
+# variable: state — line 703
+# variable: root — line 709
+# variable: window — line 710
 # END CODE MAP
 
 from __future__ import annotations
@@ -302,13 +307,13 @@ class Workbench:
         self.export_button = ttk.Button(
             results, text="Export selected analysis bundle…", command=self.export
         )
-        self.export_button.pack(anchor="w", pady=8)
+        self.export_button.pack(before=pane, side="bottom", anchor="w", pady=8)
         self.review_button = None
         if project.REVIEW_MODE is not None:
             self.review_button = ttk.Button(
                 results, text="Review selected original alert…", command=self.review_selected
             )
-            self.review_button.pack(anchor="w", pady=4)
+            self.review_button.pack(before=self.export_button, side="bottom", anchor="w", pady=4)
         self.history_table = ttk.Treeview(
             history, columns=("created", "kind", "summary"), show="headings", selectmode="browse"
         )
@@ -323,19 +328,28 @@ class Workbench:
         self.open_button = ttk.Button(
             history, text="Open saved analysis", command=self.open_history
         )
-        self.open_button.pack(anchor="w", pady=8)
+        self.open_button.pack(before=self.history_table, side="bottom", anchor="w", pady=8)
         self.remove_button = ttk.Button(
             history, text="Remove selected local analysis…", command=self.remove_history
         )
-        self.remove_button.pack(anchor="w", pady=4)
+        self.remove_button.pack(before=self.open_button, side="bottom", anchor="w", pady=4)
         footer = ttk.Frame(container)
-        footer.pack(fill="x", pady=(10, 0))
-        ttk.Label(footer, textvariable=self.status, wraplength=980).pack(
-            side="left", fill="x", expand=True
+        footer.pack(before=self.tabs, side="bottom", fill="x", pady=(10, 0))
+        self.status_label = ttk.Label(footer, textvariable=self.status, width=1)
+        self.status_label.pack(side="left", fill="x", expand=True)
+        self.status_label.bind(
+            "<Configure>",
+            lambda event: self.status_label.configure(wraplength=max(120, event.width)),
         )
-        ttk.Button(footer, text="Help", command=self.help).pack(side="right", padx=8)
-        ttk.Button(footer, text="Licenses", command=self.licenses).pack(side="right", padx=4)
-        ttk.Button(footer, text="Exit application", command=self.exit).pack(side="right")
+        self.footer_buttons: dict[str, ttk.Button] = {}
+        for label, action, padding in (
+            ("Help", self.help, 8),
+            ("Licenses", self.licenses, 4),
+            ("Exit application", self.exit, 0),
+        ):
+            button = ttk.Button(footer, text=label, command=action)
+            button.pack(side="right", padx=padding)
+            self.footer_buttons[label] = button
         for variable in self.values.values():
             variable.trace_add("write", lambda *_args: self.authorized.set(False))
         self.mode.trace_add("write", lambda *_args: self.input_changed())

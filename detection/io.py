@@ -5,40 +5,40 @@
 # parameter: limit — line 61
 # parameter: path — line 61
 # variable: descriptor — line 66
-# variable: stream — line 67
-# variable: content — line 70
-# definition: pairs — line 78
-# parameter: items — line 78
-# variable: result — line 80
-# variable: name — line 81
-# variable: value — line 81
-# definition: nonfinite — line 88
-# parameter: value — line 88
-# definition: finite_float — line 93
-# parameter: value — line 93
-# variable: result — line 95
-# definition: json_value — line 101
-# parameter: content — line 101
-# definition: canonical — line 111
-# parameter: value — line 111
-# definition: UniqueLoader — line 118
-# definition: construct_mapping — line 121
-# parameter: deep — line 121
-# parameter: node — line 121
-# parameter: self — line 121
-# variable: result — line 125
-# variable: key_node — line 126
-# variable: value_node — line 126
-# variable: key — line 127
-# definition: yaml_value — line 134
-# parameter: content — line 134
-# variable: text — line 137
-# variable: depth — line 138
-# variable: documents — line 139
-# variable: event — line 140
-# variable: depth — line 144
-# variable: depth — line 148
-# variable: documents — line 150
+# variable: stream — line 69
+# variable: content — line 72
+# definition: pairs — line 80
+# parameter: items — line 80
+# variable: result — line 82
+# variable: name — line 83
+# variable: value — line 83
+# definition: nonfinite — line 90
+# parameter: value — line 90
+# definition: finite_float — line 95
+# parameter: value — line 95
+# variable: result — line 97
+# definition: json_value — line 103
+# parameter: content — line 103
+# definition: canonical — line 113
+# parameter: value — line 113
+# definition: UniqueLoader — line 120
+# definition: construct_mapping — line 123
+# parameter: deep — line 123
+# parameter: node — line 123
+# parameter: self — line 123
+# variable: result — line 127
+# variable: key_node — line 128
+# variable: value_node — line 128
+# variable: key — line 129
+# definition: yaml_value — line 136
+# parameter: content — line 136
+# variable: text — line 139
+# variable: depth — line 140
+# variable: documents — line 141
+# variable: event — line 142
+# variable: depth — line 146
+# variable: depth — line 150
+# variable: documents — line 152
 # END CODE MAP
 
 from __future__ import annotations
@@ -63,7 +63,9 @@ def read_bytes(path: Path, limit: int) -> bytes:
     try:
         if path.is_symlink() or path.is_junction() or not stat.S_ISREG(path.lstat().st_mode):
             raise Rejected("input must be a regular file, not a link")
-        descriptor = os.open(path, os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0))
+        descriptor = os.open(
+            path, os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_NONBLOCK", 0)
+        )
         with os.fdopen(descriptor, "rb") as stream:
             if not stat.S_ISREG(os.fstat(stream.fileno()).st_mode):
                 raise Rejected("input changed file type")
