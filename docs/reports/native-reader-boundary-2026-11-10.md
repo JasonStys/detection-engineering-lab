@@ -1,0 +1,15 @@
+# Native reader and lifecycle-layout follow-up — 2026-11-10
+
+Read-only peer review identified a pre-existing regular-file check followed by potentially blocking open. A POSIX regular-to-FIFO replacement could stall before the later descriptor check, leaving the new graphical analysis worker waiting indefinitely. The original reader now adds `O_NONBLOCK` where supported, preserves no-follow behavior, validates the actual opened regular descriptor and retains its original bounded read/JSON contract. Windows uses the supported zero fallback, not an invented FIFO API.
+
+The actual Windows negative opens NUL only at an owned temporary input's acquisition boundary, requires refusal and checks descriptor closure. A separate POSIX subprocess replaces a real regular file with a no-writer FIFO; a strict three-second deadline makes the old blocking implementation fail. That real FIFO test explicitly skips on Windows and must execute in the existing Linux/macOS hosted lanes. No actual POSIX local pass, same-user attacker resistance or full shared-directory snapshot integrity is claimed.
+
+Real native visual QA also found that the shared long-status footer could squeeze an Exit label. Status wrapping now follows its remaining allocated width. The actual frozen acceptance checks 980×700 with a long message, full lifecycle-button widths and viewport bounds, and complete status height before restoring its presentation size. The original core/GUI/export/history/restart oracles remain required; no test or coverage/security gate was relaxed. Existing initial candidate and previous hosted proof remain historical rather than being relabeled as this new source head.
+
+This branch is still an unreleased 1.1.0 application. Full local and hosted outcomes, clean-source runtime identities and exact proof hashes are separately recorded; no future-green/release/install claim is made. The app remains an offline OS-owner evidence tool, not authenticated analyst identity, administrator-proof storage or signing.
+
+## Observed follow-up validation
+
+On Windows with isolated CPython 3.14.10, the complete suite passed 168 tests with two explicit skips (symlink creation denied by this OS and the POSIX-only FIFO case), at 95.83% combined statement/branch coverage against the unchanged 85% floor. Ruff, formatting, strict Windows/Linux target typing, exact source maps/file inventory, generated scenarios and the official Sigma schema/compiler all passed. The 10,000-event detector benchmark retained its original five-second/64 MiB gates (observed p95 0.043009 seconds and 879,348 traced Python bytes; parsing/export/native allocations excluded).
+
+The actual frozen candidate passed both owned process launches, three exact persisted evidence bundles, export and the real minimum-window layout checks. Its pre-commit receipt is explicitly marked dirty source. A subsequent clean-source receipt and the new draft-PR checks are separately bound to their actual commit; the earlier PR's successful checks do not establish this follow-up's hosted result. No POSIX execution, release, installation or publisher signing is inferred from these Windows observations.

@@ -17,3 +17,6 @@ dist/
 *.pem
 *.db
 *.sqlite*
+
+release/
+*.spec

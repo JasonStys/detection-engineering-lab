@@ -19,3 +19,12 @@ Regular-file checks refuse final symlinks/junctions; POSIX O_NOFOLLOW helps fina
 No authentication, daemon, remote telemetry collection, online threat intelligence, live scanning, exploit/payload execution or production SOC integration. The names `scan` and “encoded” describe offline data processing, not scanning computers or decoding/running commands. Network use is confined to developer setup/security feeds and optional explicit clicks on author links.
 
 Never commit real resumes, identifiers, credentials, API keys or operational logs; ignored databases/output directories are defense-in-depth, not a guarantee. Public checked-in reports are synthetic only. Report vulnerabilities via [SECURITY.md](../SECURITY.md).
+
+
+## Native application scope
+
+The graphical workbench is owner-local and offline. It takes explicitly selected supported evidence/configuration files; literal text rendering never runs their commands, markup or policy expressions. No HTTP listener, plugin/eval interface, automatic network transmission, collector or enforcement action was introduced. Prepared cases use the same handlers/core as operator inputs. Checkbox acknowledgements and asserted reviewer identities are not authenticated authority.
+
+The native profile is version-independent plaintext SQLite outside Git/install paths, held by an exclusive OS lock. Unknown/nonempty/linked/foreign or normal-vs-synthetic acceptance profiles fail without reset. Finite byte/count bounds, verified bundle hashes, SQL binding/transactions and exact confirmed retention removal protect application boundaries; they do not defeat OS administrators/local malware or authenticate publishers. Logical deletion is not forensic erasure and SQLite pages/backups may retain data. Existing inputs and exports are never deleted by history removal.
+
+Frozen builds require patched CPython3.14.10 and matching actual interpreter DLL bytes; exact resources and source/dirty metadata are checked. Actual runtime licenses are retained, including Tcl9 embedded zipfs resources. This is coherence/provenance evidence, not Authenticode signing, independent malware certification or guaranteed security. See [native application usage and limits](native-application.md).
