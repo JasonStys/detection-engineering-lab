@@ -4,22 +4,22 @@
 # variable: BEGIN — line 31
 # variable: END — line 32
 # variable: SPECIAL — line 33
-# definition: description — line 61
-# parameter: path — line 61
-# variable: content — line 65
-# variable: summary — line 67
-# variable: line — line 76
-# definition: main — line 84
-# variable: parser — line 86
-# variable: args — line 88
-# variable: files — line 89
-# variable: rows — line 97
-# variable: path — line 99
-# variable: path — line 101
-# variable: original — line 102
-# variable: first — line 103
-# variable: last — line 103
-# variable: expected — line 104
+# definition: description — line 65
+# parameter: path — line 65
+# variable: content — line 69
+# variable: summary — line 71
+# variable: line — line 80
+# definition: main — line 88
+# variable: parser — line 90
+# variable: args — line 92
+# variable: files — line 93
+# variable: rows — line 101
+# variable: path — line 103
+# variable: path — line 105
+# variable: original — line 106
+# variable: first — line 107
+# variable: last — line 107
+# variable: expected — line 108
 # END CODE MAP
 
 import argparse
@@ -31,6 +31,10 @@ ROOT = Path(__file__).resolve().parents[1]
 BEGIN = "<!-- BEGIN FILE GUIDE -->"
 END = "<!-- END FILE GUIDE -->"
 SPECIAL = {
+    "docs/reports/windows-application-guide-1.1.0.docx": "Individually reviewed four-page installed application guide with actual screenshots, worked workflow, immutable source excerpts and limits.",
+    "docs/reports/windows-application-guide-1.1.0.json": "Exact Word, actual screenshot and reviewed page digests plus observed source-specific validation results.",
+    "docs/screenshots/installed-1.1.0/investigation.png": "Actual installed application synthetic-profile screenshot: Original alert investigation.",
+    "docs/screenshots/installed-1.1.0/reasoned-review.png": "Actual installed application synthetic-profile screenshot: Reasoned analyst review.",
     "requirements-native.lock": "Exact SHA256-locked Windows freezing tools; runtime graph remains separately locked.",
     "docs/licenses/tcl-9.0.4.txt": "Actual checksum-bound reference SDK Tcl9.0.4 notice; each portable build retains its actual runtime notice.",
     "docs/licenses/tk-9.0.4.txt": "Actual checksum-bound reference SDK Tk9.0.4 notice; each portable build retains its actual runtime notice.",
