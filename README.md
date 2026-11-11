@@ -66,6 +66,14 @@ After Python edits: `python -m ruff format .`, then `python scripts/code_map.py`
 
 Read [architecture](docs/architecture.md), [input/configuration contracts](docs/contracts.md), [rules and triage](docs/rules.md), [security boundaries](docs/threat-model.md), [research](docs/research.md), [operations](docs/runbook.md), and [validation results](docs/reports/validation.md). Help and security reporting: [SECURITY.md](SECURITY.md). Contributions: [CONTRIBUTING.md](CONTRIBUTING.md).
 
+## Native profile storage correction
+
+Version 1.1.1 rejects pre-existing linked/nonregular fixed profile and SQLite
+sidecar entries before initialization can write through an alias. Ordinary
+recovery files and existing profile schemas remain supported; no data is reset.
+See the [confirmed fixture, recovery tests and scope](docs/reports/profile-admission-2026-11-11.md).
+Earlier native releases and documentation retain their own dated evidence.
+
 ## Every tracked file
 
 <!-- BEGIN FILE GUIDE -->
@@ -108,6 +116,7 @@ Read [architecture](docs/architecture.md), [input/configuration contracts](docs/
 | [docs/reports/native-application-2026-11-10.md](docs/reports/native-application-2026-11-10.md) | Native workbench validation — 2026-11-10. |
 | [docs/reports/native-reader-boundary-2026-11-10.md](docs/reports/native-reader-boundary-2026-11-10.md) | Native reader and lifecycle-layout follow-up — 2026-11-10. |
 | [docs/reports/portfolio-sync-2026-10-22.md](docs/reports/portfolio-sync-2026-10-22.md) | <!-- File: docs/reports/portfolio-sync-2026-10-22.md; Purpose: certificate-bundle security repair and evidence by Jason Stys. -->. |
+| [docs/reports/profile-admission-2026-11-11.md](docs/reports/profile-admission-2026-11-11.md) | Fixed profile entry admission — November 11, 2026. |
 | [docs/reports/project-guide.docx](docs/reports/project-guide.docx) | Reviewed Word project guide bound to the documented source revision. |
 | [docs/reports/publications.json](docs/reports/publications.json) | Exact Office digests, visual review scopes and immutable source baselines. |
 | [docs/reports/replay.json](docs/reports/replay.json) | Measured synthetic replay counts, disagreements, timings and snapshot hashes. |
@@ -154,6 +163,7 @@ Read [architecture](docs/architecture.md), [input/configuration contracts](docs/
 | [tests/test_detection.py](tests/test_detection.py) | Independent semantic oracle, Sigma matching and labeled replay regressions. Jason Stys. |
 | [tests/test_export.py](tests/test_export.py) | End-to-end CLI, inert HTML, SQL binding and non-overwrite output tests. Jason Stys. |
 | [tests/test_inputs.py](tests/test_inputs.py) | Schema, resource, ambiguity and untrusted-input safety regressions. Jason Stys. |
+| [tests/test_profile_admission.py](tests/test_profile_admission.py) | Actual pre-existing alias refusal and ordinary SQLite recovery continuity. Jason Stys. |
 | [tests/test_reader_races.py](tests/test_reader_races.py) | Actual opened-device and POSIX regular-to-FIFO replacement regressions for bounded readers. Jason Stys. |
 | [tests/test_review.py](tests/test_review.py) | Independent comparison/triage workflow boundaries and actual CLI acceptance. Jason Stys. |
 | [tests/test_tools.py](tests/test_tools.py) | Development-gate drift, schema verification and code-map idempotence. Jason Stys. |

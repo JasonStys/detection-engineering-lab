@@ -4,109 +4,114 @@ No host collection, network listener, shell command or public account is involve
 An exclusive OS lock owns one marked profile; SQLite keeps actual core outputs.
 """
 # BEGIN CODE MAP (generated; python scripts/code_map.py)
-# variable: MAX_FILE — line 128
-# variable: MAX_BUNDLE — line 129
-# variable: MAX_HISTORY — line 130
-# variable: MAX_RUNS — line 131
-# definition: package_identity — line 134
-# parameter: names — line 135
-# parameter: product — line 135
-# parameter: root — line 135
-# parameter: version — line 135
-# variable: path — line 138
-# variable: value — line 141
-# variable: name — line 163
-# variable: identity — line 169
-# definition: profile_path — line 184
-# parameter: name — line 184
-# variable: base — line 187
-# variable: base — line 189
-# variable: base — line 191
-# definition: unlinked — line 195
-# parameter: path — line 195
-# variable: path — line 197
-# variable: p — line 198
-# definition: Workspace — line 203
-# definition: __init__ — line 206
-# parameter: path — line 207
-# parameter: product — line 207
-# parameter: resources — line 207
-# parameter: self — line 207
-# parameter: synthetic — line 207
-# variable: marker — line 216
-# variable: expected — line 217
-# variable: stream — line 221
-# variable: actual — line 224
-# variable: flags — line 232
-# variable: info — line 235
-# variable: database — line 249
-# variable: connection — line 258
-# definition: connect — line 277
-# parameter: self — line 277
-# variable: connection — line 281
-# definition: close — line 291
-# parameter: self — line 291
-# definition: save — line 297
-# parameter: files — line 298
-# parameter: kind — line 298
-# parameter: parameters — line 298
-# parameter: self — line 298
-# parameter: summary — line 298
-# variable: name — line 304
-# variable: value — line 307
-# variable: data — line 309
-# variable: total — line 309
-# variable: data — line 310
-# variable: connection — line 312
-# variable: count — line 314
-# variable: size — line 315
-# variable: identity — line 322
-# variable: data — line 340
-# variable: name — line 340
-# definition: history — line 345
-# parameter: self — line 345
+# variable: MAX_FILE — line 133
+# variable: MAX_BUNDLE — line 134
+# variable: MAX_HISTORY — line 135
+# variable: MAX_RUNS — line 136
+# definition: package_identity — line 139
+# parameter: names — line 140
+# parameter: product — line 140
+# parameter: root — line 140
+# parameter: version — line 140
+# variable: path — line 143
+# variable: value — line 146
+# variable: name — line 168
+# variable: identity — line 174
+# definition: profile_path — line 189
+# parameter: name — line 189
+# variable: base — line 192
+# variable: base — line 194
+# variable: base — line 196
+# definition: unlinked — line 200
+# parameter: path — line 200
+# variable: path — line 202
+# variable: p — line 203
+# definition: admit_existing — line 208
+# parameter: path — line 208
+# variable: info — line 211
+# definition: Workspace — line 222
+# definition: __init__ — line 225
+# parameter: path — line 226
+# parameter: product — line 226
+# parameter: resources — line 226
+# parameter: self — line 226
+# parameter: synthetic — line 226
+# variable: name — line 235
+# variable: marker — line 244
+# variable: expected — line 245
+# variable: stream — line 249
+# variable: actual — line 252
+# variable: flags — line 260
+# variable: info — line 263
+# variable: database — line 277
+# variable: connection — line 286
+# definition: connect — line 305
+# parameter: self — line 305
+# variable: name — line 309
+# variable: connection — line 316
+# definition: close — line 326
+# parameter: self — line 326
+# definition: save — line 332
+# parameter: files — line 333
+# parameter: kind — line 333
+# parameter: parameters — line 333
+# parameter: self — line 333
+# parameter: summary — line 333
+# variable: name — line 339
+# variable: value — line 342
+# variable: data — line 344
+# variable: total — line 344
+# variable: data — line 345
 # variable: connection — line 347
-# variable: rows — line 348
-# variable: row — line 351
-# definition: _rows — line 353
-# parameter: connection — line 353
-# parameter: identity — line 353
-# parameter: self — line 353
-# variable: count — line 355
-# variable: largest — line 355
-# variable: total — line 355
-# variable: rows — line 361
-# variable: row — line 367
-# variable: row — line 372
-# definition: files — line 377
-# parameter: identity — line 377
-# parameter: self — line 377
-# variable: connection — line 381
+# variable: count — line 349
+# variable: size — line 350
+# variable: identity — line 357
+# variable: data — line 375
+# variable: name — line 375
+# definition: history — line 380
+# parameter: self — line 380
+# variable: connection — line 382
 # variable: rows — line 383
-# variable: _digest — line 384
-# variable: data — line 384
-# variable: name — line 384
-# definition: remove — line 386
-# parameter: expected — line 386
-# parameter: identity — line 386
-# parameter: self — line 386
-# variable: connection — line 390
-# variable: rows — line 392
-# variable: _data — line 393
-# variable: digest — line 393
-# variable: manifest — line 393
-# variable: name — line 393
-# definition: export — line 399
-# parameter: identity — line 399
-# parameter: parent — line 399
-# parameter: product — line 399
-# parameter: self — line 399
-# variable: files — line 401
-# variable: parent — line 404
-# variable: target — line 407
-# variable: data — line 409
-# variable: name — line 409
-# variable: stream — line 412
+# variable: row — line 386
+# definition: _rows — line 388
+# parameter: connection — line 388
+# parameter: identity — line 388
+# parameter: self — line 388
+# variable: count — line 390
+# variable: largest — line 390
+# variable: total — line 390
+# variable: rows — line 396
+# variable: row — line 402
+# variable: row — line 407
+# definition: files — line 412
+# parameter: identity — line 412
+# parameter: self — line 412
+# variable: connection — line 416
+# variable: rows — line 418
+# variable: _digest — line 419
+# variable: data — line 419
+# variable: name — line 419
+# definition: remove — line 421
+# parameter: expected — line 421
+# parameter: identity — line 421
+# parameter: self — line 421
+# variable: connection — line 425
+# variable: rows — line 427
+# variable: _data — line 428
+# variable: digest — line 428
+# variable: manifest — line 428
+# variable: name — line 428
+# definition: export — line 434
+# parameter: identity — line 434
+# parameter: parent — line 434
+# parameter: product — line 434
+# parameter: self — line 434
+# variable: files — line 436
+# variable: parent — line 439
+# variable: target — line 442
+# variable: data — line 444
+# variable: name — line 444
+# variable: stream — line 447
 # END CODE MAP
 
 from __future__ import annotations
@@ -200,6 +205,20 @@ def unlinked(path: Path) -> Path:
     return path.resolve()
 
 
+def admit_existing(path: Path) -> None:
+    """Refuse pre-existing linked/nonregular fixed state before initialization can write through an alias."""
+    try:
+        info = path.lstat()
+    except FileNotFoundError:
+        return
+    if (
+        not stat.S_ISREG(info.st_mode)
+        or info.st_nlink != 1
+        or getattr(info, "st_file_attributes", 0) & getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0)
+    ):
+        raise Rejected("fixed workspace state must be unlinked one-link regular files")
+
+
 class Workspace:
     """One-owner plaintext history; preserving evidence does not authenticate its publisher or analyst."""
 
@@ -213,6 +232,15 @@ class Workspace:
         ):
             raise Rejected("workspace must be outside the application installation")
         self.path.mkdir(parents=True, exist_ok=True, mode=0o700)
+        for name in (
+            "profile.json",
+            "instance.lock",
+            "history.sqlite",
+            "history.sqlite-journal",
+            "history.sqlite-wal",
+            "history.sqlite-shm",
+        ):
+            admit_existing(self.path / name)
         marker = self.path / "profile.json"
         expected = {"schema": 1, "product": product, "synthetic_acceptance": synthetic}
         if not marker.exists():
@@ -278,6 +306,13 @@ class Workspace:
         """Use short transactions and no shared mutable SQLite connection across GUI/worker threads."""
         if self.lock < 0:
             raise Rejected("workspace is closed")
+        for name in (
+            "history.sqlite",
+            "history.sqlite-journal",
+            "history.sqlite-wal",
+            "history.sqlite-shm",
+        ):
+            admit_existing(self.path / name)
         connection = sqlite3.connect(self.database, timeout=5)
         try:
             connection.setlimit(sqlite3.SQLITE_LIMIT_LENGTH, MAX_FILE + 8192)
