@@ -34,3 +34,12 @@ Commands also work individually in PowerShell after activation. `bash scripts/va
 CI has no Actions artifact/cache uploads. Results remain in job logs and summaries; the development outputs in `out/` remain ignored. Long-term synthetic evidence is deliberately saved under `docs/reports/`, with date, platform, scope and run links. Reports must not claim a pending run passed.
 
 Gaps: no native event-source adapters, representative customer data, SIEM backend compatibility, streaming/lateness watermark processing, hostile shared-folder races, sustained distributed load or independently certified accessibility/security assessment. Do not claim fuzzing every language/protocol or zero-day immunity from this suite.
+
+
+## Native workbench validation
+
+New project-adapter tests call actual core functions and SQLite exports with independent known fixture oracles. Storage tests exercise one-owner profiles, unknown/incompatible state, safe paths, quotas, transactions, BLOB hashes, stale-confirmation rejection and non-reused run identities. Presentation-adapter tests replace only OS widgets/dialog acquisition while keeping core/storage/thread work real. An actual Windows frozen executable separately instantiates the same Tk widgets/mainloop and runs the actual controls against an explicitly synthetic profile; no result/API is mocked.
+
+`python scripts/build_native.py` requires an isolated patched CPython3.14.10 build environment and exact native lock. `python scripts/test_native_app.py` tests the resulting EXE with no Python/Node on its child PATH and no provider/account environment, validates independent domain oracles and exact private export, checks normal owned-process disappearance and starts a second process to prove exact retained bundle hashes. Screenshots capture only its owned synthetic window. This is not independent OS accessibility automation, populated real-user upgrade or signing proof. Existing coverage, benchmark, property, cross-platform, security-extended CodeQL and dependency/secret/configuration/workflow gates remain mandatory. No artifact/cache uploads were added.
+
+[Actual native candidate observations](reports/native-application-2026-11-10.md) are distinct from historical reports and pending hosted/release results. Do not infer a future CI pass from a local build.

@@ -4,22 +4,22 @@
 # variable: BEGIN — line 31
 # variable: END — line 32
 # variable: SPECIAL — line 33
-# definition: description — line 58
-# parameter: path — line 58
-# variable: content — line 62
-# variable: summary — line 64
-# variable: line — line 73
-# definition: main — line 81
-# variable: parser — line 83
-# variable: args — line 85
-# variable: files — line 86
-# variable: rows — line 94
-# variable: path — line 96
-# variable: path — line 98
-# variable: original — line 99
-# variable: first — line 100
-# variable: last — line 100
-# variable: expected — line 101
+# definition: description — line 61
+# parameter: path — line 61
+# variable: content — line 65
+# variable: summary — line 67
+# variable: line — line 76
+# definition: main — line 84
+# variable: parser — line 86
+# variable: args — line 88
+# variable: files — line 89
+# variable: rows — line 97
+# variable: path — line 99
+# variable: path — line 101
+# variable: original — line 102
+# variable: first — line 103
+# variable: last — line 103
+# variable: expected — line 104
 # END CODE MAP
 
 import argparse
@@ -31,6 +31,9 @@ ROOT = Path(__file__).resolve().parents[1]
 BEGIN = "<!-- BEGIN FILE GUIDE -->"
 END = "<!-- END FILE GUIDE -->"
 SPECIAL = {
+    "requirements-native.lock": "Exact SHA256-locked Windows freezing tools; runtime graph remains separately locked.",
+    "docs/licenses/tcl-9.0.4.txt": "Actual checksum-bound reference SDK Tcl9.0.4 notice; each portable build retains its actual runtime notice.",
+    "docs/licenses/tk-9.0.4.txt": "Actual checksum-bound reference SDK Tk9.0.4 notice; each portable build retains its actual runtime notice.",
     "docs/reports/project-guide.docx": "Reviewed Word project guide bound to the documented source revision.",
     "docs/reports/publications.json": "Exact Office digests, visual review scopes and immutable source baselines.",
     ".gitattributes": "Portable LF text and binary database handling.",
@@ -50,7 +53,7 @@ SPECIAL = {
     "docs/reports/demo.html": "Offline synthetic demonstration report with escaped data and hash-authorized CSS.",
     "detection/schema.sql": "STRICT indexed evidence tables and foreign-key constraints.",
     "scripts/validate.sh": "Fail-fast cross-platform quality, semantic and benchmark checks.",
-    ".github/workflows/ci.yml": "Four OS/Python validation lanes and unsuppressed security gates; no artifact/cache uploads.",
+    ".github/workflows/ci.yml": "Real Windows GUI/package/reopen acceptance, four OS/Python lanes and unsuppressed security gates; no artifact/cache uploads.",
     ".github/workflows/codeql.yml": "Least-privilege Python security-extended CodeQL analysis.",
 }
 

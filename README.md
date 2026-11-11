@@ -7,6 +7,12 @@ A defensive, offline detection-engineering portfolio by **Jason Stys**. Replay s
 
 This is a measured lab, **not a production SIEM, incident verdict, live scanner, full Sigma interpreter, or compliance certification**. It does not execute event commands, collect credentials, contact target machines, use AI services, or upload logs. All included identities, hosts and documentation-range addresses are fictional.
 
+## Native graphical application
+
+The project now includes a real Windows portable workbench: choose your authorized supported files/policies, configure the operation, run the existing core, inspect/filter evidence, retain local SQLite history and export actual reports. Prepared fictional scenarios are optional inputs in that same application, not a separate demo. End users open `DetectionEngineeringLab.exe` without Python/Node/setup commands; a reviewed downloadable release and individual desktop icon are separate publication/installation steps.
+
+[Application usage, privacy, backup and build guide](docs/native-application.md) · [Dated candidate validation](docs/reports/native-application-2026-11-10.md). Patched CPython3.14.10, actual runtime notices/DLL hashes, real Tk controls and two-process persistence are verified by the native build/acceptance lane. This is a portable Windows application, not an MSI/NSIS, signed or universal-platform installer. Original CLI workflows below remain available.
+
 ## Quick start
 
 Python 3.12–3.14, from the repository directory. No Docker, administrator access, cloud account or credentials needed. Internet is needed only for initial dependencies; replay itself is offline.
@@ -67,7 +73,7 @@ Read [architecture](docs/architecture.md), [input/configuration contracts](docs/
 | File | Purpose |
 | --- | --- |
 | [.gitattributes](.gitattributes) | Portable LF text and binary database handling. |
-| [.github/workflows/ci.yml](.github/workflows/ci.yml) | Four OS/Python validation lanes and unsuppressed security gates; no artifact/cache uploads. |
+| [.github/workflows/ci.yml](.github/workflows/ci.yml) | Real Windows GUI/package/reopen acceptance, four OS/Python lanes and unsuppressed security gates; no artifact/cache uploads. |
 | [.github/workflows/codeql.yml](.github/workflows/codeql.yml) | Least-privilege Python security-extended CodeQL analysis. |
 | [.gitignore](.gitignore) | Excludes environments, databases, keys, caches and local evidence. |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Contributing. |
@@ -78,6 +84,9 @@ Read [architecture](docs/architecture.md), [input/configuration contracts](docs/
 | [config/sigma-schema.json](config/sigma-schema.json) | Pinned public-domain official Sigma detection rule schema. |
 | [detection/__init__.py](detection/__init__.py) | Offline defensive detection lab, authored by Jason Stys; no telemetry or network calls. |
 | [detection/__main__.py](detection/__main__.py) | Offline CLI for bounded synthetic replay or explicitly authorized normalized telemetry. Jason Stys. |
+| [detection/desktop.py](detection/desktop.py) | Native offline workbench: real project inputs, analysis, searchable evidence, history and export. Jason Stys. |
+| [detection/desktop_project.py](detection/desktop_project.py) | Real detection replay, timeline, report comparison and reasoned triage adapter for the desktop. Jason Stys. |
+| [detection/desktop_state.py](detection/desktop_state.py) | Owner-local desktop profile, bounded durable bundles and non-overwriting export. Jason Stys. |
 | [detection/engine.py](detection/engine.py) | Label-independent rule matching and inclusive event-time burst correlation. Jason Stys. |
 | [detection/evaluate.py](detection/evaluate.py) | Independent labeled replay evaluation with explicit event-detector denominators. Jason Stys. |
 | [detection/events.py](detection/events.py) | Normalize bounded JSONL telemetry and deduplicate stable identities. Jason Stys. |
@@ -89,9 +98,13 @@ Read [architecture](docs/architecture.md), [input/configuration contracts](docs/
 | [docs/architecture.md](docs/architecture.md) | Architecture and decision record. |
 | [docs/contracts.md](docs/contracts.md) | Input and output contracts. |
 | [docs/handbook.md](docs/handbook.md) | Detection Engineering Lab handbook. |
+| [docs/licenses/tcl-9.0.4.txt](docs/licenses/tcl-9.0.4.txt) | Actual checksum-bound reference SDK Tcl9.0.4 notice; each portable build retains its actual runtime notice. |
+| [docs/licenses/tk-9.0.4.txt](docs/licenses/tk-9.0.4.txt) | Actual checksum-bound reference SDK Tk9.0.4 notice; each portable build retains its actual runtime notice. |
+| [docs/native-application.md](docs/native-application.md) | Detection Engineering native workbench. |
 | [docs/reports/demo.html](docs/reports/demo.html) | Offline synthetic demonstration report with escaped data and hash-authorized CSS. |
 | [docs/reports/dependency-repair-2026-11-09.md](docs/reports/dependency-repair-2026-11-09.md) | CI-discovered dependency repair — 2026-11-09. |
 | [docs/reports/documentation-refresh-2026-11-09.md](docs/reports/documentation-refresh-2026-11-09.md) | Documentation refresh — 2026-11-09. |
+| [docs/reports/native-application-2026-11-10.md](docs/reports/native-application-2026-11-10.md) | Native workbench validation — 2026-11-10. |
 | [docs/reports/portfolio-sync-2026-10-22.md](docs/reports/portfolio-sync-2026-10-22.md) | <!-- File: docs/reports/portfolio-sync-2026-10-22.md; Purpose: certificate-bundle security repair and evidence by Jason Stys. -->. |
 | [docs/reports/project-guide.docx](docs/reports/project-guide.docx) | Reviewed Word project guide bound to the documented source revision. |
 | [docs/reports/publications.json](docs/reports/publications.json) | Exact Office digests, visual review scopes and immutable source baselines. |
@@ -109,6 +122,7 @@ Read [architecture](docs/architecture.md), [input/configuration contracts](docs/
 | [pyproject.toml](pyproject.toml) | Runtime metadata and strict lint/type/test/coverage gates. |
 | [requirements-dev.in](requirements-dev.in) | Reviewed direct development dependencies. |
 | [requirements-dev.lock](requirements-dev.lock) | Complete hash-locked development dependency graph. |
+| [requirements-native.lock](requirements-native.lock) | Exact SHA256-locked Windows freezing tools; runtime graph remains separately locked. |
 | [requirements-runtime.in](requirements-runtime.in) | Minimal reviewed replay runtime dependency. |
 | [requirements-runtime.lock](requirements-runtime.lock) | Hash-locked portable runtime installation. |
 | [rules/cloud_logging.yml](rules/cloud_logging.yml) | CloudTrail Logging Removal Candidate; experimental authored Sigma rule. |
@@ -117,13 +131,20 @@ Read [architecture](docs/architecture.md), [input/configuration contracts](docs/
 | [rules/windows_log_clear.yml](rules/windows_log_clear.yml) | Windows Security Audit Log Cleared; experimental authored Sigma rule. |
 | [rules/windows_powershell.yml](rules/windows_powershell.yml) | PowerShell Encoded Argument Candidate; experimental authored Sigma rule. |
 | [scripts/benchmark.py](scripts/benchmark.py) | Measured synthetic detector benchmark, not a production SIEM capacity claim. Jason Stys. |
+| [scripts/build_native.py](scripts/build_native.py) | Build the complete real offline workbench as one Windows portable executable. Jason Stys. |
 | [scripts/code_map.py](scripts/code_map.py) | Generate/check exact Python symbol locations in file headers. Created by Jason Stys. |
 | [scripts/file_guide.py](scripts/file_guide.py) | Maintain an exhaustive README summary of tracked files, excluding ignored private outputs. Jason Stys. |
+| [scripts/native_acceptance.py](scripts/native_acceptance.py) | Exercise the same real frozen Tk controls/core on an explicit synthetic profile; no arbitrary scripts. Jason Stys. |
+| [scripts/native_entry.py](scripts/native_entry.py) | Launch the actual bundled offline project workbench; no setup shell commands. Jason Stys. |
 | [scripts/scenarios.py](scripts/scenarios.py) | Reproducible synthetic telemetry and independently authored truth, never detector-derived. Jason Stys. |
 | [scripts/summary.py](scripts/summary.py) | Small CI job summaries without uploading Actions artifacts or sensitive telemetry. Jason Stys. |
+| [scripts/test_native_app.py](scripts/test_native_app.py) | Run the real frozen workbench twice with an owned synthetic profile and exact bundle persistence. Jason Stys. |
 | [scripts/tools.py](scripts/tools.py) | Install only hash-pinned official Linux scanner binaries. Created by Jason Stys. |
 | [scripts/validate.sh](scripts/validate.sh) | Fail-fast cross-platform quality, semantic and benchmark checks. |
 | [scripts/validate_rules.py](scripts/validate_rules.py) | Validate authored Sigma against pinned official schema and stricter lab grammar. Jason Stys. |
+| [tests/test_desktop_gui.py](tests/test_desktop_gui.py) | Presentation-adapter unit tests with real core/SQLite workers; real widgets are separately frozen-tested. Jason Stys. |
+| [tests/test_desktop_project.py](tests/test_desktop_project.py) | Actual desktop adapters exercise unchanged detection/core/SQLite exports with independent oracles. Jason Stys. |
+| [tests/test_desktop_state.py](tests/test_desktop_state.py) | Independent offline desktop ownership, byte-bound, SQLite and non-overwrite regressions. Jason Stys. |
 | [tests/test_detection.py](tests/test_detection.py) | Independent semantic oracle, Sigma matching and labeled replay regressions. Jason Stys. |
 | [tests/test_export.py](tests/test_export.py) | End-to-end CLI, inert HTML, SQL binding and non-overwrite output tests. Jason Stys. |
 | [tests/test_inputs.py](tests/test_inputs.py) | Schema, resource, ambiguity and untrusted-input safety regressions. Jason Stys. |

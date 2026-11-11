@@ -31,3 +31,10 @@ Let n be events, r rules, c correlations and p bounded predicates. Parsing/dedup
 Limits: n ≤50,000 JSONL rows, r ≤32, c ≤8, 16MiB input, 16KiB row, 32 scalar fields, 4,096-character strings, threshold 2–32, window 1–3,600 seconds. UTF-8 bytes and character limits are distinct. Regex validates fixed, bounded schemas only, never user regex execution. The 10,000-event benchmark excludes normalization and export; the replay report separately measures pre-export wall time. Trace memory excludes native/interpreter allocations.
 
 Extending this lab needs explicit adapters, richer PowerShell/cron coverage, independent larger evaluation data, streaming watermark semantics and a production telemetry authenticity/privacy design. Do not expand the compiler silently.
+
+
+## Native workbench boundary
+
+The native entry adds graphical controls around the original core, not a second implementation of its rules. `desktop_project.py` owns project-specific supported input/operation/view semantics; `desktop.py` owns Tk controls and an owned background worker; `desktop_state.py` owns one marked OS-local profile, SQLite transactions, bounded bundles, provenance hashes and explicit retention. Original CLI paths and new-directory exports are preserved.
+
+Only the Tk thread changes widgets. A worker captures scalar settings once, invokes existing analysis functions and saves a completed bundle atomically; the event queue reports completion/errors. Exit waits for that worker before releasing the profile. There is no local HTTP server, remote service, collector/enforcement route or automatic sample execution. Per-user durable storage is outside temporary one-file extraction and the executable installation. Exact frozen resources/interpreter version are checked before opening it. User acknowledgement is not identity authentication.
