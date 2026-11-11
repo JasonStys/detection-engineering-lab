@@ -112,6 +112,7 @@ Earlier native releases and documentation retain their own dated evidence.
 | [docs/reports/demo.html](docs/reports/demo.html) | Offline synthetic demonstration report with escaped data and hash-authorized CSS. |
 | [docs/reports/dependency-repair-2026-11-09.md](docs/reports/dependency-repair-2026-11-09.md) | CI-discovered dependency repair — 2026-11-09. |
 | [docs/reports/documentation-refresh-2026-11-09.md](docs/reports/documentation-refresh-2026-11-09.md) | Documentation refresh — 2026-11-09. |
+| [docs/reports/installed-windows-1.1.1-2026-11-11.md](docs/reports/installed-windows-1.1.1-2026-11-11.md) | Installed Windows 1.1.1 validation · 11 November 2026. |
 | [docs/reports/installed-windows-2026-11-10.md](docs/reports/installed-windows-2026-11-10.md) | Installed Windows application validation 10 November 2026. |
 | [docs/reports/native-application-2026-11-10.md](docs/reports/native-application-2026-11-10.md) | Native workbench validation — 2026-11-10. |
 | [docs/reports/native-reader-boundary-2026-11-10.md](docs/reports/native-reader-boundary-2026-11-10.md) | Native reader and lifecycle-layout follow-up — 2026-11-10. |
@@ -123,6 +124,8 @@ Earlier native releases and documentation retain their own dated evidence.
 | [docs/reports/validation.md](docs/reports/validation.md) | Validation evidence — 2026-10-13. |
 | [docs/reports/windows-application-guide-1.1.0.docx](docs/reports/windows-application-guide-1.1.0.docx) | Individually reviewed four-page installed application guide with actual screenshots, worked workflow, immutable source excerpts and limits. |
 | [docs/reports/windows-application-guide-1.1.0.json](docs/reports/windows-application-guide-1.1.0.json) | Exact Word, actual screenshot and reviewed page digests plus observed source-specific validation results. |
+| [docs/reports/windows-application-guide-1.1.1.docx](docs/reports/windows-application-guide-1.1.1.docx) | Reviewed current 1.1.1 installed-app guide: actual screenshots, workflow, immutable code and measured limits. |
+| [docs/reports/windows-application-guide-1.1.1.json](docs/reports/windows-application-guide-1.1.1.json) | Current Word, screenshot, source and individually reviewed rendered-page hashes. |
 | [docs/reports/workflows-2026-11-09.md](docs/reports/workflows-2026-11-09.md) | Offline review workflow validation — 2026-11-09. |
 | [docs/research.md](docs/research.md) | Primary-source research and provenance. |
 | [docs/rules.md](docs/rules.md) | Rules, scenarios and triage. |
@@ -181,7 +184,7 @@ Start with the [organized handbook](docs/handbook.md) for current usage, design,
 
 [Publication identities and source scope](docs/reports/publications.json) · [Documentation validation record](docs/reports/documentation-refresh-2026-11-09.md). Historical results retain their own tested revision and date.
 
-## Current Windows application guide
+## Historical Windows application guide (1.1.0)
 
 The [version 1.1.0 illustrated guide](docs/reports/windows-application-guide-1.1.0.docx) explains the actual
 installed application with two real screenshots, a worked user workflow, important
@@ -195,3 +198,7 @@ New documentation files:
 - [docs/reports/windows-application-guide-1.1.0.json](docs/reports/windows-application-guide-1.1.0.json): Exact Word, actual screenshot and reviewed page digests plus observed source-specific validation results.
 - [docs/screenshots/installed-1.1.0/investigation.png](docs/screenshots/installed-1.1.0/investigation.png): Actual installed application synthetic-profile screenshot: Original alert investigation.
 - [docs/screenshots/installed-1.1.0/reasoned-review.png](docs/screenshots/installed-1.1.0/reasoned-review.png): Actual installed application synthetic-profile screenshot: Reasoned analyst review.
+
+## Current Windows application guide
+
+The published **1.1.1** app has a [four-page illustrated guide](docs/reports/windows-application-guide-1.1.1.docx) with actual installed screenshots, a worked user journey, important source excerpts and practical limits. Read the [installed-app and upgrade results](docs/reports/installed-windows-1.1.1-2026-11-11.md) and [byte/page review manifest](docs/reports/windows-application-guide-1.1.1.json) for exact scope. Earlier Office editions remain historical and unchanged.
