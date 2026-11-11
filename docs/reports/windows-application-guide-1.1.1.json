@@ -1,0 +1,89 @@
+{
+  "schema": 1,
+  "repository": "detection-engineering-lab",
+  "runtimeVersion": "1.1.1",
+  "runtimeSource": "5d68b39e73ba0043f8b62892e7638928cf8be489",
+  "createdAt": "2026-11-11T09:40:52.855Z",
+  "author": "Jason Stys",
+  "document": "windows-application-guide-1.1.1.docx",
+  "sha256": "c46306fedfb0dfa7903f0be077bb7dc92939668c0be155aeb77885d2e8d1af92",
+  "screenshots": [
+    {
+      "file": "investigation.png",
+      "sha256": "1f31e88de9776b96748b0b7e4f785a4605b9fa16463d9fb79d6c6942567ca942",
+      "width": 1276,
+      "height": 899,
+      "caption": "The installed application filters the supplied clear maintenance event and displays its original detector and timestamp. The summary reports 71 events and 10 candidates with supplied-label precision 70 percent and recall 77.8 percent."
+    },
+    {
+      "file": "reasoned-review.png",
+      "sha256": "8f7f981e96d7c9f3d8c8b8fe1d70b95073cff0b7e11f70cadedf2557430948e5",
+      "width": 1276,
+      "height": 899,
+      "caption": "The installed application records a reasoned analyst disposition while retaining the original alert evidence. A review is a human assertion and does not rewrite detector accuracy."
+    }
+  ],
+  "snippets": [
+    {
+      "file": "detection/desktop_state.py",
+      "first": 208,
+      "last": 219,
+      "sha256": "5cd749a383ce48c87d8e5c58182332bdacce5cc7c5547763a0fd9f7ca524c858",
+      "url": "https://github.com/JasonStys/detection-engineering-lab/blob/5d68b39e73ba0043f8b62892e7638928cf8be489/detection/desktop_state.py#L208"
+    }
+  ],
+  "observedTests": [
+    {
+      "name": "Actual installed workflows",
+      "observed": "Full original domain, review and export controls passed two normal native launches; all 3 saved bundles retained exact original bytes.",
+      "result": "Passed"
+    },
+    {
+      "name": "Old-to-new profile",
+      "observed": "The actual installed 1.1.0 app created a synthetic profile; installed 1.1.1 reopened it and retained all 3 exact bundles without reset.",
+      "result": "Passed"
+    },
+    {
+      "name": "Source and distribution",
+      "observed": "Exact-main workflows and processed CodeQL passed with zero open main alerts. Five downloaded assets and installed files matched their verified SHA-256 identities.",
+      "result": "Verified"
+    },
+    {
+      "name": "PC and links",
+      "observed": "Existing links were backed up and retargeted with settings retained. Normal profiles and Docker were unchanged; default-profile shortcut activation remains separately untested.",
+      "result": "Verified"
+    }
+  ],
+  "visualReview": {
+    "approved": true,
+    "ooxmlSchema": "passed",
+    "pages": [
+      {
+        "page": 1,
+        "sha256": "730a934d223f03112ea951f2d44f878310250dc8c35ecea56ef48d816a54895b",
+        "approved": true,
+        "method": "Individually inspected final page content"
+      },
+      {
+        "page": 2,
+        "sha256": "943dd93c952ecb26db28abbf25293f54e3a113a378d213d69f80682c3a823b22",
+        "approved": true,
+        "method": "Exact pixel identity carries prior individual root inspection of r1"
+      },
+      {
+        "page": 3,
+        "sha256": "7d843731750830322cb91509742e737cf07291cba9f801892207144c59c89f62",
+        "approved": true,
+        "method": "Exact pixel identity carries prior individual root inspection of r1"
+      },
+      {
+        "page": 4,
+        "sha256": "b8e51ad4da9926520a75cda8b18a820c4ef9faaa67adfe1ec38e847ed667332f",
+        "approved": true,
+        "method": "Individually inspected final page content"
+      }
+    ],
+    "checkedUtc": "2026-11-11T10:22:43.321860+00:00",
+    "method": "All final page content individually inspected by root or named peers; only exact pixel identity carries prior individual inspection."
+  }
+}
