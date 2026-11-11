@@ -56,7 +56,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 PRODUCT = "detection-engineering-lab"
 EXECUTABLE = "DetectionEngineeringLab.exe"
-VERSION = "1.1.0"
+VERSION = "1.1.1"
 
 
 def gone(pid: int) -> bool:

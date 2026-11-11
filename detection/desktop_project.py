@@ -81,7 +81,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PRODUCT = "detection-engineering-lab"
 TITLE = "Detection Engineering Workbench"
 PROFILE = "DetectionEngineeringLab"
-VERSION = "1.1.0"
+VERSION = "1.1.1"
 COLUMNS = ("Event UTC", "Detector / source", "Event identity", "Disposition / change")
 RESOURCES = (
     "examples/events.jsonl",
