@@ -104,6 +104,7 @@ Read [architecture](docs/architecture.md), [input/configuration contracts](docs/
 | [docs/reports/demo.html](docs/reports/demo.html) | Offline synthetic demonstration report with escaped data and hash-authorized CSS. |
 | [docs/reports/dependency-repair-2026-11-09.md](docs/reports/dependency-repair-2026-11-09.md) | CI-discovered dependency repair — 2026-11-09. |
 | [docs/reports/documentation-refresh-2026-11-09.md](docs/reports/documentation-refresh-2026-11-09.md) | Documentation refresh — 2026-11-09. |
+| [docs/reports/installed-windows-2026-11-10.md](docs/reports/installed-windows-2026-11-10.md) | Installed Windows application validation 10 November 2026. |
 | [docs/reports/native-application-2026-11-10.md](docs/reports/native-application-2026-11-10.md) | Native workbench validation — 2026-11-10. |
 | [docs/reports/native-reader-boundary-2026-11-10.md](docs/reports/native-reader-boundary-2026-11-10.md) | Native reader and lifecycle-layout follow-up — 2026-11-10. |
 | [docs/reports/portfolio-sync-2026-10-22.md](docs/reports/portfolio-sync-2026-10-22.md) | <!-- File: docs/reports/portfolio-sync-2026-10-22.md; Purpose: certificate-bundle security repair and evidence by Jason Stys. -->. |
@@ -111,10 +112,14 @@ Read [architecture](docs/architecture.md), [input/configuration contracts](docs/
 | [docs/reports/publications.json](docs/reports/publications.json) | Exact Office digests, visual review scopes and immutable source baselines. |
 | [docs/reports/replay.json](docs/reports/replay.json) | Measured synthetic replay counts, disagreements, timings and snapshot hashes. |
 | [docs/reports/validation.md](docs/reports/validation.md) | Validation evidence — 2026-10-13. |
+| [docs/reports/windows-application-guide-1.1.0.docx](docs/reports/windows-application-guide-1.1.0.docx) | Individually reviewed four-page installed application guide with actual screenshots, worked workflow, immutable source excerpts and limits. |
+| [docs/reports/windows-application-guide-1.1.0.json](docs/reports/windows-application-guide-1.1.0.json) | Exact Word, actual screenshot and reviewed page digests plus observed source-specific validation results. |
 | [docs/reports/workflows-2026-11-09.md](docs/reports/workflows-2026-11-09.md) | Offline review workflow validation — 2026-11-09. |
 | [docs/research.md](docs/research.md) | Primary-source research and provenance. |
 | [docs/rules.md](docs/rules.md) | Rules, scenarios and triage. |
 | [docs/runbook.md](docs/runbook.md) | Operator and contributor runbook. |
+| [docs/screenshots/installed-1.1.0/investigation.png](docs/screenshots/installed-1.1.0/investigation.png) | Actual installed application synthetic-profile screenshot: Original alert investigation. |
+| [docs/screenshots/installed-1.1.0/reasoned-review.png](docs/screenshots/installed-1.1.0/reasoned-review.png) | Actual installed application synthetic-profile screenshot: Reasoned analyst review. |
 | [docs/testing.md](docs/testing.md) | Test strategy and validation gates. |
 | [docs/threat-model.md](docs/threat-model.md) | Threat model and security review. |
 | [docs/workflows.md](docs/workflows.md) | Rule comparison and analyst review. |
@@ -165,3 +170,18 @@ Created by [Jason Stys](https://github.com/JasonStys). Contact through [LinkedIn
 Start with the [organized handbook](docs/handbook.md) for current usage, design, security and test guidance. Reviewed downloadable editions: [project-guide.docx](docs/reports/project-guide.docx).
 
 [Publication identities and source scope](docs/reports/publications.json) · [Documentation validation record](docs/reports/documentation-refresh-2026-11-09.md). Historical results retain their own tested revision and date.
+
+## Current Windows application guide
+
+The [version 1.1.0 illustrated guide](docs/reports/windows-application-guide-1.1.0.docx) explains the actual
+installed application with two real screenshots, a worked user workflow, important
+source excerpts and observed validation. Read the [dated delivery report](docs/reports/installed-windows-2026-11-10.md)
+and [byte and page review](docs/reports/windows-application-guide-1.1.0.json) for exact scope. Historical Office
+editions remain available with their original baselines.
+
+New documentation files:
+
+- [docs/reports/windows-application-guide-1.1.0.docx](docs/reports/windows-application-guide-1.1.0.docx): Individually reviewed four-page installed application guide with actual screenshots, worked workflow, immutable source excerpts and limits.
+- [docs/reports/windows-application-guide-1.1.0.json](docs/reports/windows-application-guide-1.1.0.json): Exact Word, actual screenshot and reviewed page digests plus observed source-specific validation results.
+- [docs/screenshots/installed-1.1.0/investigation.png](docs/screenshots/installed-1.1.0/investigation.png): Actual installed application synthetic-profile screenshot: Original alert investigation.
+- [docs/screenshots/installed-1.1.0/reasoned-review.png](docs/screenshots/installed-1.1.0/reasoned-review.png): Actual installed application synthetic-profile screenshot: Reasoned analyst review.

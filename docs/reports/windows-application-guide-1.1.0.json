@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "repository": "detection-engineering-lab",
+  "runtimeVersion": "1.1.0",
+  "runtimeSource": "f70eecac9fcc511ea74ff7ab88b9c5a27f24732f",
+  "createdAt": "2026-11-11T03:59:32.194Z",
+  "author": "Jason Stys",
+  "document": "windows-application-guide-1.1.0.docx",
+  "sha256": "198d4bf6be3e03e94b2c12227c49e4e93765dfbfab81787130f88161e8e2f355",
+  "screenshots": [
+    {
+      "file": "investigation.png",
+      "sha256": "a010567b2cfc4c636c4ad27d8751c7f46c628145a607ef80edf8df87f7c3c91d",
+      "width": 1276,
+      "height": 899,
+      "caption": "The installed application filters the supplied clear maintenance event and displays its original detector and timestamp. The summary reports 71 events and 10 candidates with supplied-label precision 70 percent and recall 77.8 percent."
+    },
+    {
+      "file": "reasoned-review.png",
+      "sha256": "0fdc034ea7455496d6b81c731cf7a948b785e6dfb6f4d45504f24d36a8d43f43",
+      "width": 1276,
+      "height": 899,
+      "caption": "The installed application records a reasoned analyst disposition while retaining the original alert evidence. A review is a human assertion and does not rewrite detector accuracy."
+    }
+  ],
+  "snippets": [
+    {
+      "file": "detection/desktop_state.py",
+      "first": 203,
+      "last": 225,
+      "sha256": "385fc77cde7c768f36b2048ca8e8eaf4e42996da930122a1ff6fb0ce5c6acde9",
+      "url": "https://github.com/JasonStys/detection-engineering-lab/blob/f70eecac9fcc511ea74ff7ab88b9c5a27f24732f/detection/desktop_state.py#L203"
+    }
+  ],
+  "observedTests": [
+    {
+      "name": "Release and runtime",
+      "observed": "All 5 downloaded assets matched provider/sidecar hashes. Actual frozen CPython 3.14.10 and Tcl/Tk 9.0.4 matched their recorded runtime identities.",
+      "result": "Passed"
+    },
+    {
+      "name": "Real user workflow",
+      "observed": "Three exact saved bundles survived a second compiled launch. Real timeline/filter/review/export controls and malformed-input retention passed; all lifecycle buttons remained visible at 980 by 700 with a long status.",
+      "result": "Passed"
+    },
+    {
+      "name": "Source and security",
+      "observed": "All current main workflows passed. Exact-source CodeQL analyses processed with zero open main alerts before publication.",
+      "result": "Passed"
+    },
+    {
+      "name": "Desktop delivery",
+      "observed": "New individual Desktop and Start-menu links target the installed accepted EXE. Shortcut metadata was read back; normal shortcut activation was not independently exercised.",
+      "result": "Verified"
+    }
+  ],
+  "visualReview": {
+    "approved": true,
+    "scope": "all four pages individually inspected",
+    "ooxmlSchema": "passed",
+    "pages": [
+      {
+        "file": "page-1.png",
+        "sha256": "b302d0bde264c5e2a64b9e62777d7d343cb0f92d1dd572c94a4d5fe8f69a6362"
+      },
+      {
+        "file": "page-2.png",
+        "sha256": "ce880b31900c3326b73ba3adeded1e9d2f52048a4b3dd95f1c20ed71d01b1042"
+      },
+      {
+        "file": "page-3.png",
+        "sha256": "3ecbf38335ec7c264eda941900a75c7839621fb72b073896143be9e3bd1a11f7"
+      },
+      {
+        "file": "page-4.png",
+        "sha256": "7414635b3ec600afd088afb76a30ceade7cf9cabe9b12e77cd5d3b800457c573"
+      }
+    ],
+    "reviewedUtc": "2026-11-11T04:29:29.566976+00:00"
+  }
+}
